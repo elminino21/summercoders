@@ -25,7 +25,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	private ScreensController myController;
 	
 	@FXML
-	private AnchorPane rootPane;
+	private AnchorPane root;
 	@FXML
 	private JFXDrawer drawer;
 	@FXML
@@ -65,6 +65,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	{
 		
 		drawer.setSidePane(drawerPane); /** the the side panel in the drawer */
+                root.getStyleClass().add("root");
 	}
 	
 	

@@ -30,7 +30,7 @@ public class MainController implements Initializable, ControlledScreen
     private ObservableList<PieChart.Data> pieChartData; 
 	private Random rand = new Random();
 	@FXML
-	private AnchorPane rootPane;
+	private AnchorPane root;
 	@FXML
 	private JFXDrawer drawer;
 	@FXML
@@ -41,7 +41,7 @@ public class MainController implements Initializable, ControlledScreen
     private void papenclick(MouseEvent event) {
          
     	this.addTestData();
-        
+        root.getStyleClass().add("root");
         piechart.setData(pieChartData);
     }
 	

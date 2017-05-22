@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="rootPane"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" style="-fx-background-color: transparent;"
+<AnchorPane fx:id="root"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" 
 minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
 fx:controller="com.summercoder.MVC.controller.LongInController"  onMouseClicked="#panelclicked" >
    <children>

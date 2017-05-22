@@ -40,7 +40,8 @@ public class GUITestester extends Application{
         Group root = new Group();
         root.getChildren().addAll(mainContainer);
         Scene scene = new Scene(root);
-        scene.setFill(Color.LIGHTCYAN);
+        //scene.setFill(Color.LIGHTCYAN);
+        scene.getStylesheets().add("style.css");
         stage.setScene(scene);
         stage.show();
 		
