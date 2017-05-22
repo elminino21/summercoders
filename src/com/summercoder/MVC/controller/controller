@@ -1,0 +1,5 @@
+This package will only classes and packages made to act upon the view and model. 
+
+Controller acts on both model(database) and view. 
+It controls the data flow into model object and updates the view whenever data changes. 
+It keeps view and model separate.

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane fx:id="rootPane"  onMouseClicked="#panelclicked" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" style="-fx-background-color: transparent;"
+minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="com.summercoder.MVC.controller.MainController"   >
+   <children>
+   
+    <!-- drawer init -->
+     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" >
+     			<children> 
+    				  <fx:include source="LoginViewDrawer.fxml"  fx:id="drawerPane"/> 
+      			</children>
+      		</JFXDrawer >
+      <!-- drawer end -->
+      	 
+      
+      <!-- hamburger init -->
+      <JFXHamburger fx:id="hamberger" onMouseClicked="#hamburgerClicked" layoutX="20" layoutY="20">
+         	<opaqueInsets>
+           		 <Insets />
+         	</opaqueInsets>  
+      	</JFXHamburger>
+      	 <!-- hamburger ends -->
+      	<!-- tab pane init -->
+      <JFXTabPane layoutX="20" layoutY="100" prefHeight="700" prefWidth="800">
+         <tabs>
+      <!-- tab1 pane init -->
+            <Tab text="option1">
+               <content>
+               
+               		<HBox onMouseClicked="#papenclick" > 
+               			<HBox>
+               			<padding><Insets top="100" /></padding>
+               		<ImageView fitHeight="300" fitWidth="350"  layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true"  >
+         				<image>
+          				  <Image url="file:APPFiles/images/placeholder.JPG" />
+         				</image>
+      				</ImageView>
+      				</HBox>
+                  <padding><Insets top="25" right="25" bottom="25" left="0"/></padding>
+                  		<VBox>   
+                  			<AnchorPane> 
+                 	 		<PieChart fx:id="piechart"  prefHeight="500" prefWidth="500" layoutX="10" layoutY="0" />
+                 	 		</AnchorPane>
+						</VBox>
+         		 </HBox>
+                           
+               </content>
+            </Tab>
+        <!-- tab1 pane ends -->
+        <!-- tab2 pane init -->
+            <Tab text="option2">
+               <content>
+                  
+                  	<HBox fx:id="secondTap"> 
+              		 <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+              		 
+              		<ImageView fitHeight="550" fitWidth="550"  layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true"  >
+         				<image>
+          				  <Image url="file:APPFiles/images/placeholder.JPG" />
+         				</image>
+      				</ImageView>
+              
+                  </HBox>
+                  
+               </content>
+            </Tab>
+            <!-- tab2 pane ends -->
+            <!-- tab3 pane init -->
+            <Tab text="option3" >
+            	<content>
+               <VBox> 
+               <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+                <Rectangle fill="DODGERBLUE"  width="100" height="100" stroke="BLACK" strokeType="INSIDE" />
+                  </VBox>
+                  </content>
+            </Tab>
+            <!-- tab3 pane ends -->
+         </tabs>
+      </JFXTabPane>
+      <!-- tab pane ends -->
+   </children>
+</AnchorPane>

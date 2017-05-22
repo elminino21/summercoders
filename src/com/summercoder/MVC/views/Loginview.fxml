@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="rootPane"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" style="-fx-background-color: transparent;"
+minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="com.summercoder.MVC.controller.LongInController"  onMouseClicked="#panelclicked" >
+   <children>
+   
+      
+      	
+      	 <!-- drawer init -->
+     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" >
+     			<children> 
+    				  <fx:include source="LoginViewDrawer.fxml"  fx:id="drawerPane"/> 
+      			</children>
+      		</JFXDrawer >
+      <!-- drawer end -->
+      
+      
+      <JFXHamburger fx:id="hamberger"  onMouseClicked="#hamburgerClicked" layoutX="20" layoutY="20">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+        
+      	</JFXHamburger>
+      
+      <!-- init center text files -->
+        	
+        	<JFXTextField  promptText="LONG IN" alignment="center" layoutY="200" layoutX="250" prefWidth="300">
+        	</JFXTextField>
+    		<JFXPasswordField   promptText="PASSWORD"  alignment="center" layoutY="250" layoutX="250" prefWidth="300"/>
+    		<Label layoutX="500" layoutY="300." text="Join us"  
+    		style="-fx-text-fill:#eb0707;-fx-font-size:15px;" />
+    		
+    		<Label layoutX="250" layoutY="300." text="Forgot your password?" 
+    		style="-fx-text-fill:#eb0707;-fx-font-size:15px;"  />
+    		
+    		<JFXButton prefWidth="100" prefHeight="40" buttonType="RAISED" onAction="#loginPress" layoutX="350" layoutY="350" text="Sign in"
+    		 style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;" />
+    		
+    		
+    <!-- layoutX="${rootPane.prefWidth }"  prefWidth="${node.parent.width}" layoutY="${rootPane.prefHeight}" -->
+      <!-- ends center text files -->
+      
+   </children>
+</AnchorPane>
