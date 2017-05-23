@@ -11,8 +11,6 @@ minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/j
 fx:controller="com.summercoder.MVC.controller.LongInController"  onMouseClicked="#panelclicked" >
    <children>
    
-      
-      	
       	 <!-- drawer init -->
      		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" >
      			<children> 
@@ -34,15 +32,16 @@ fx:controller="com.summercoder.MVC.controller.LongInController"  onMouseClicked=
         	<JFXTextField  promptText="LONG IN" alignment="center" layoutY="200" layoutX="250" prefWidth="300">
         	</JFXTextField>
     		<JFXPasswordField   promptText="PASSWORD"  alignment="center" layoutY="250" layoutX="250" prefWidth="300"/>
-    		<Label layoutX="500" layoutY="300." text="Join us"  
-    		style="-fx-text-fill:#eb0707;-fx-font-size:15px;" />
+    		<Label layoutX="500" layoutY="300." text="Join us"  onMouseClicked="#newUserPressed"
+    		style="-fx-text-fill:#eb0707;-fx-font-size:15px; -fx-cursor: hand;" />
     		
     		<Label layoutX="250" layoutY="300." text="Forgot your password?" 
-    		style="-fx-text-fill:#eb0707;-fx-font-size:15px;"  />
+    		style="-fx-text-fill:#eb0707;-fx-font-size:15px; -fx-cursor: hand;"  />
     		
+                
     		<JFXButton prefWidth="100" prefHeight="40" buttonType="RAISED" onAction="#loginPress" layoutX="350" layoutY="350" text="Sign in"
     		 style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;" />
-    		
+                
     		
     <!-- layoutX="${rootPane.prefWidth }"  prefWidth="${node.parent.width}" layoutY="${rootPane.prefHeight}" -->
       <!-- ends center text files -->

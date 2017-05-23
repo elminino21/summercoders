@@ -18,10 +18,12 @@ import javafx.stage.Stage;
 public class GUITestester extends Application{
 	
 	
-	 	public static String screen1ID = "login";
+	    public static String screen1ID = "login";
 	    public static String screen1File = "/com/summercoder/MVC/views/Loginview.fxml";
 	    public static String screen2ID = "main";
 	    public static String screen2File = "/com/summercoder/MVC/views/MainView.fxml";
+            public static String screen3ID = "newlogin";
+	    public static String screen3File = "/com/summercoder/MVC/views/NewUserView.fxml";
 	    
 	    
 
@@ -29,9 +31,10 @@ public class GUITestester extends Application{
 	public void start(Stage stage) throws Exception
 	{
 			
-		ScreensController mainContainer = new ScreensController();
+	ScreensController mainContainer = new ScreensController();
         mainContainer.loadScreen(GUITestester.screen1ID, GUITestester.screen1File);
         mainContainer.loadScreen(GUITestester.screen2ID, GUITestester.screen2File);
+        mainContainer.loadScreen(GUITestester.screen3ID, GUITestester.screen3File);
       
         mainContainer.setScreen(GUITestester.screen1ID);
         
@@ -40,9 +43,11 @@ public class GUITestester extends Application{
         Group root = new Group();
         root.getChildren().addAll(mainContainer);
         Scene scene = new Scene(root);
-        //scene.setFill(Color.LIGHTCYAN);
+        scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Lobster");
         scene.getStylesheets().add("style.css");
+       
         stage.setScene(scene);
+        
         stage.show();
 		
 		

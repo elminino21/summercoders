@@ -38,15 +38,17 @@ public class MainController implements Initializable, ControlledScreen
 	@FXML private VBox drawerPane;
 	
     @FXML
-    private void papenclick(MouseEvent event) {
+    private void papenclick(MouseEvent event) 
+    {
          
     	this.addTestData();
-        root.getStyleClass().add("root");
+       
         piechart.setData(pieChartData);
     }
 	
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
+                root.getStyleClass().add("root");
 		this.addTestData();
 		piechart.legendVisibleProperty().setValue(false);
 		 piechart.setData(pieChartData);

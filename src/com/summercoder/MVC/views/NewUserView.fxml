@@ -2,26 +2,30 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXHamburger?>
-<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTextField?>  
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import com.jfoenix.controls.JFXDrawer?>  
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelclicked" prefHeight="800" prefWidth="800" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.summercoder.MVC.controller.LongInController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+            onMouseClicked="#panelclicked" prefHeight="800" prefWidth="800"  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.summercoder.MVC.controller.NewUserController">
    <children>
    
-      <Label layoutX="364.0" layoutY="40.0" text="App name" style="-fx-text-fill:#eb0707;-fx-font-size:40px;-fx-font-family:'Script MT';" />
+      <Label layoutX="300" layoutY="40.0" text="App name" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" />
       	
-      	 <!-- drawer init -
+      	 <!-- drawer init -->
      		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" >
      			<children> 
     				  <fx:include source="LoginViewDrawer.fxml"  fx:id="drawerPane"/> 
       			</children>
       		</JFXDrawer >
-      drawer end -->
+      <!-- drawer end -->
       
       
       <JFXHamburger fx:id="hamberger" layoutX="20" layoutY="20" onMouseClicked="#hamburgerClicked">
@@ -37,15 +41,19 @@
       
       
       
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="0"  />
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Username" GridPane.rowIndex="1"/>
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="First Name" GridPane.rowIndex="2"/>
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Password" GridPane.rowIndex="3"/>
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="4"/>
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Confirm Password" GridPane.rowIndex="5"/>
-      <Label  text="By clicking on sign up, you agree to the terms and condictions of the service." GridPane.rowIndex="7"/>
-      <Label  text="" style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="6"/>
-      <JFXButton text="Sign up" alignment="center" GridPane.rowIndex="8"/>
+      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Username" GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);"/>
+      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="First Name" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);" />
+      
+      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="3" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXPasswordField  prefHeight="25" prefWidth="100" alignment="center" promptText="Password" GridPane.rowIndex="4" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXPasswordField  prefHeight="25" prefWidth="100" alignment="center" promptText="Confirm Password" GridPane.rowIndex="5" style="-fx-text-fill:rgb(77,102,204);" />
+      <Label  text="By clicking on sign up, you agree to the terms and condictions of the service." GridPane.rowIndex="7" style="-fx-text-fill:rgb(77,102,204);"/>
+      <Label   fx:id="massageText" text="I will be a massage to the user"   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="6"/>
+      <HBox GridPane.rowIndex="8">
+          <padding><Insets top="25" right="25" bottom="25" left="185"/></padding>
+      <JFXButton text="Sign up" alignment="center"  style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;"/>
+      </HBox>
       <!-- init center text files -->
         	
         </GridPane>	
