@@ -32,10 +32,10 @@ fx:controller="com.summercoder.MVC.controller.MainController"   >
       	</JFXHamburger>
       	 <!-- hamburger ends -->
       	<!-- tab pane init -->
-      <JFXTabPane layoutX="20" layoutY="100" prefHeight="700" prefWidth="800">
-         <tabs>
+      <JFXTabPane layoutX="20" layoutY="100" prefHeight="700" prefWidth="800"  >
+         <tabs >
       <!-- tab1 pane init -->
-            <Tab text="option1">
+            <Tab text="option1" style="-fx-background-color:rgb(77,102,204)">
                <content>
                
                		<HBox onMouseClicked="#papenclick" > 
@@ -59,7 +59,7 @@ fx:controller="com.summercoder.MVC.controller.MainController"   >
             </Tab>
         <!-- tab1 pane ends -->
         <!-- tab2 pane init -->
-            <Tab text="option2">
+            <Tab text="option2" style="-fx-background-color:rgb(77,102,204)">
                <content>
                   
                   	<HBox fx:id="secondTap"> 
@@ -77,7 +77,7 @@ fx:controller="com.summercoder.MVC.controller.MainController"   >
             </Tab>
             <!-- tab2 pane ends -->
             <!-- tab3 pane init -->
-            <Tab text="option3" >
+            <Tab text="option3" style="-fx-background-color:rgb(77,102,204)">
             	<content>
                <VBox> 
                <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>

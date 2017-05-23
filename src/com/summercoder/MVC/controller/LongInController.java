@@ -8,7 +8,6 @@ import com.jfoenix.controls.JFXHamburger;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
 import com.summercoder.MVC.views.GUITestester;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
