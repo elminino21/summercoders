@@ -12,9 +12,16 @@
 
 <AnchorPane fx:id="root"  onMouseClicked="#panelclicked" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
-fx:controller="com.summercoder.MVC.controller.MainController"   >
+fx:controller="com.summercoder.MVC.controller.MainController"  >
    <children>
    
+       
+       <VBox layoutX="230" layoutY="0" alignment="CENTER">
+       <!-- title -->
+      <Label  text="Summer Coders" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" />
+      	<padding><Insets top="0" right="25" bottom="25" left="25"/></padding>
+       </VBox>
+       
     <!-- drawer init -->
      		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" >
      			<children> 

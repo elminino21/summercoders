@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.SVGPath;
 
 public class LongInController  implements Initializable, ControlledScreen  {
 	
@@ -30,6 +31,8 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	@FXML
 	private void loginPress(ActionEvent event)
 	{
+            
+            
 		myController.setScreen(GUITestester.screen2ID);
 		event.consume();
 	}
@@ -66,6 +69,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	@Override
 	public void initialize(URL url, ResourceBundle rb) 
 	{
+                        
 		root.getStyleClass().add("root");
 		drawer.setSidePane(drawerPane); /** the the side panel in the drawer */
                 
@@ -82,7 +86,13 @@ public class LongInController  implements Initializable, ControlledScreen  {
         if( !drawer.isHidden()  )
         {
         	drawer.close();
-        	drawer.toBack();
+                
+                if(drawer.isHidding()) 
+                {
+                    drawer.toBack();
+                    
+                }
+                 
         	
         }
 	}

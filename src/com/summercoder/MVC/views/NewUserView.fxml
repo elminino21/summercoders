@@ -12,14 +12,26 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import com.jfoenix.controls.JFXDrawer?>  
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
             onMouseClicked="#panelclicked" prefHeight="800" prefWidth="800"  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.summercoder.MVC.controller.NewUserController">
    <children>
    
+       <VBox layoutX="230" layoutY="0" alignment="CENTER">
        <!-- title -->
-      <Label layoutX="270" layoutY="40.0" text="Summer Coders" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" />
-      	
+      <Label  text="Summer Coders" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" />
+      	<padding><Insets top="0" right="25" bottom="25" left="25"/></padding>
+      <ImageView  fitHeight="100" fitWidth="100"   pickOnBounds="true" preserveRatio="true"  >
+           
+            <image>       
+                <Image url="file:APPFiles/images/newuser.png" />
+            </image>
+      	</ImageView>
+       </VBox>
+        
+      
       	 <!-- drawer init -->
      		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" >
      			<children> 
@@ -35,20 +47,23 @@
          </opaqueInsets>
         
       	</JFXHamburger>
+        
+        
      
-      <GridPane  layoutX="50" layoutY="100" hgap="20" vgap="40" > 
+      <GridPane  layoutX="50" layoutY="150" hgap="20" vgap="40" > 
  
     <padding><Insets top="25" right="100" bottom="25" left="100"/></padding>
       
       
+      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="First Name" GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Username" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);"/>
       
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Username" GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);"/>
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="First Name" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);" />
       
       <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="3" style="-fx-text-fill:rgb(77,102,204);" />
       <JFXPasswordField  prefHeight="25" prefWidth="100" alignment="center" promptText="Password" GridPane.rowIndex="4" style="-fx-text-fill:rgb(77,102,204);" />
       <JFXPasswordField  prefHeight="25" prefWidth="100" alignment="center" promptText="Confirm Password" GridPane.rowIndex="5" style="-fx-text-fill:rgb(77,102,204);" />
+      
       <Label  text="By clicking on sign up, you agree to the terms and condictions of the service." GridPane.rowIndex="7" style="-fx-text-fill:rgb(77,102,204);"/>
       <Label   fx:id="massageText" text="I will be a massage to the user"   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="6"/>
       <HBox GridPane.rowIndex="8">
