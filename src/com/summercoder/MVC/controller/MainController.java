@@ -36,6 +36,7 @@ public class MainController implements Initializable, ControlledScreen
 	@FXML
 	private JFXHamburger hamberger;
 	@FXML private VBox drawerPane;
+
 	
     @FXML
     private void papenclick(MouseEvent event) 

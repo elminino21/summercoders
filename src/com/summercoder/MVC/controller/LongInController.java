@@ -1,34 +1,59 @@
 package com.summercoder.MVC.controller;
 
+import com.jfoenix.controls.JFXDialog;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.controls.JFXPopup;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
 import com.summercoder.MVC.views.GUITestester;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.SVGPath;
 
 public class LongInController  implements Initializable, ControlledScreen  {
 	
 	private ScreensController myController;
-	
+	private JFXDialog pop;
 	@FXML
 	private AnchorPane root;
 	@FXML
 	private JFXDrawer drawer;
 	@FXML
 	private JFXHamburger hamberger;
-	@FXML private VBox drawerPane;
-	
 	@FXML
+        private VBox drawerPane;
+       
+	
+	
+       
+                
+         @FXML
+	private void  forgotPasswordPressed(MouseEvent event)
+	{
+            
+           
+        
+            
+            
+            
+            
+            
+		
+		event.consume();
+	}
+        
+        @FXML
 	private void loginPress(ActionEvent event)
 	{
             
@@ -69,6 +94,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	@Override
 	public void initialize(URL url, ResourceBundle rb) 
 	{
+              
                         
 		root.getStyleClass().add("root");
 		drawer.setSidePane(drawerPane); /** the the side panel in the drawer */

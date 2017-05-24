@@ -3,29 +3,36 @@
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
 prefHeight="400.0" prefWidth="200" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
- >
-   <children>
-   <!--image init -->
+  fx:controller="com.summercoder.MVC.controller.LoginDrawerController">
+    <children>
+    <StackPane fx:id="stack">
+        <VBox>
+        <children>
+    
+    <!--image init -->
    
-   		<ImageView fitHeight="200" fitWidth="200" layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true"  >
+     <ImageView fitHeight="200" fitWidth="200" layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true"  >
          <image>
             <Image url="file:APPFiles/images/placeholder.JPG" />
          </image>
-      </ImageView>
+     </ImageView>
 		
-		<!--image ends -->
+    <!--image ends -->
 		
-      <JFXButton  text="Reset Password"  prefHeight="50" prefWidth="200"  style="-fx-text-fill:#0f33e2;-fx-font-size:16px;"   />
-      <JFXButton  text="Support" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;"/>
-      <JFXButton  text="About us" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" />
-      <JFXButton  text="Exit" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;"/>
+      <JFXButton  fx:id="acount" text="My Account"  prefHeight="50" prefWidth="200"  style="-fx-text-fill:#0f33e2;-fx-font-size:16px;"   />
+      <JFXButton  fx:id="support" text="Support" prefHeight="50" onAction="#supportPress" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;"/>
+      <JFXButton  fx:id="about" text="About us" onAction="#aboutPress" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" />
+      <JFXButton  fx:id="exit" text="Exit" onAction="#exitPress" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;"/>
       
       
-      
+              
+        </children>
+        </VBox>
+    </StackPane>
    </children>
 </VBox>
