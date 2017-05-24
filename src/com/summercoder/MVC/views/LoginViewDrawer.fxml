@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.image.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.StackPane?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<?scenebuilder-stylesheet drawer.css?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
-prefHeight="400.0" prefWidth="200" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="com.summercoder.MVC.controller.LoginDrawerController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="200" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-    <StackPane fx:id="stack">
-        <VBox>
-        <children>
     
+      
     <!--image init -->
    
-     <ImageView fitHeight="200" fitWidth="200" layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true"  >
+     <ImageView fitHeight="200" fitWidth="200" layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:APPFiles/images/placeholder.JPG" />
          </image>
@@ -24,15 +21,25 @@ prefHeight="400.0" prefWidth="200" xmlns="http://javafx.com/javafx/8" xmlns:fx="
 		
     <!--image ends -->
 		
-      <JFXButton  fx:id="acount" text="My Account"  prefHeight="50" prefWidth="200"  style="-fx-text-fill:#0f33e2;-fx-font-size:16px;"   />
-      <JFXButton  fx:id="support" text="Support" prefHeight="50" onAction="#supportPress" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;"/>
-      <JFXButton  fx:id="about" text="About us" onAction="#aboutPress" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" />
-      <JFXButton  fx:id="exit" text="Exit" onAction="#exitPress" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;"/>
-      
-      
-              
-        </children>
-        </VBox>
-    </StackPane>
+      <JFXButton fx:id="acount" accessibleText="account" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" text="My Account" >
+             <stylesheets>
+                <URL value="@/drawer.css" />
+            </stylesheets> 
+       </JFXButton>
+          
+      <JFXButton fx:id="support" accessibleText="support" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" text="Support" >
+               
+       </JFXButton>
+      <JFXButton fx:id="about" accessibleText="about" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" text="About us" >
+             
+       </JFXButton>
+      <JFXButton fx:id="exit" accessibleText="exit" buttonType="RAISED" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" text="Exit" >
+                  
+       </JFXButton>
+    
    </children>
+   
+                 <stylesheets>
+                      <URL value="@/drawer.css" />
+                </stylesheets> 
 </VBox>

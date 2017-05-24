@@ -10,9 +10,14 @@ import com.jfoenix.controls.JFXPopup;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
 import com.summercoder.MVC.views.GUITestester;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -31,8 +36,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	private JFXDrawer drawer;
 	@FXML
 	private JFXHamburger hamberger;
-	@FXML
-        private VBox drawerPane;
+	VBox side;
        
 	
 	
@@ -94,12 +98,51 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	@Override
 	public void initialize(URL url, ResourceBundle rb) 
 	{
-              
+             
+                  
                         
 		root.getStyleClass().add("root");
-		drawer.setSidePane(drawerPane); /** the the side panel in the drawer */
+		sidePanelSetter();
+                setEvents();
                 
 	}
+        
+        
+        
+        private void sidePanelSetter()
+        {
+               try {
+               side = FXMLLoader.load(getClass().getResource("/com/summercoder/MVC/views/LoginViewDrawer.fxml"));
+            } catch (IOException ex) {
+                Logger.getLogger(LongInController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+           drawer.setSidePane(side);
+         
+        }
+        
+        private void setEvents()
+        {
+             for(Node node :side.getChildren())
+           {
+               if(node.getAccessibleText() != null)
+               {
+                  
+                    node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
+                        
+                         switch(node.getAccessibleText()) {
+                             case "account": myController.setScreen(GUITestester.screen3ID);
+                             case "exit": myController.setScreen(GUITestester.screen3ID);
+                             case "about": myController.setScreen(GUITestester.screen3ID);
+                                
+                         }
+                        
+                    });
+               
+               }
+              
+           } 
+        }
 	
 	
 	/**

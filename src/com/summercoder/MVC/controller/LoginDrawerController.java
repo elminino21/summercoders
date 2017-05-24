@@ -7,12 +7,19 @@ import com.jfoenix.controls.JFXHamburger;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
 import com.summercoder.MVC.views.GUITestester;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
@@ -29,15 +36,15 @@ import javafx.stage.Stage;
 import javax.annotation.PostConstruct;
 import javax.management.Notification;
 
-public class LoginDrawerController implements Initializable, ControlledScreen  {
+public class LoginDrawerController implements Initializable  {
 	
-	private ScreensController myController;
+	//private ScreensController myController;
         private StackPane stack;
 	@FXML
         private JFXButton about;
 	
         
-	@FXML
+        @FXML
 	private void supportPress(ActionEvent event)
 	{
            
@@ -57,22 +64,31 @@ public class LoginDrawerController implements Initializable, ControlledScreen  {
 		event.consume();
 	}
         
+        
+        
+	@FXML
+	private void myAcctPress(ActionEvent event)
+	{
+         
+
+
+    
+            System.out.print("Account clicked");
+           
+		
+		event.consume();
+	}
+        
         @FXML
 	private void aboutPress(ActionEvent event)
 	{
            
-       
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("SummerCoder");
             alert.setContentText("Fun summer project made by a bunch of students with the goal of making an application useful to others in addition to it creators.");
 
             alert.showAndWait();
-       
-            
 
-
- 
-    
             System.out.print("about click");
            
 		
@@ -113,15 +129,9 @@ public class LoginDrawerController implements Initializable, ControlledScreen  {
                 System.out.print("about click");
             });
             */
-                
+            
 	}
-        
-        
 
-         @Override
-         public void setScreenParent(ScreensController screenPage) 
-         {
-            myController = screenPage;
-         }
+         
 	
 }

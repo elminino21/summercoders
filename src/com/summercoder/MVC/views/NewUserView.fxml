@@ -33,11 +33,7 @@
         
       
       	 <!-- drawer init -->
-     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" >
-     			<children> 
-    				  <fx:include source="LoginViewDrawer.fxml"  fx:id="drawerPane"/> 
-      			</children>
-      		</JFXDrawer >
+     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" />
       <!-- drawer end -->
       
       

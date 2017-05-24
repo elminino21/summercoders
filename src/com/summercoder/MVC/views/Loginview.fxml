@@ -17,11 +17,7 @@
         <Label layoutX="270" layoutY="0" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" text="Summer Coders" />
    
       	 <!-- drawer init -->
-     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" onMouseClicked="#drawerclicked" prefHeight="400.0" prefWidth="200">
-     			<children> 
-    				  <fx:include fx:id="drawerPane" source="LoginViewDrawer.fxml" /> 
-      			</children>
-      		</JFXDrawer>
+     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" onMouseClicked="#drawerclicked" prefHeight="400.0" prefWidth="200" />  		
       <!-- drawer end -->
       
       

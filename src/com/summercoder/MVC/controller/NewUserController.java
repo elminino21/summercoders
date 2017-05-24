@@ -5,14 +5,19 @@ import com.jfoenix.controls.JFXHamburger;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
 import com.summercoder.MVC.views.GUITestester;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -32,14 +37,14 @@ public class NewUserController implements Initializable, ControlledScreen
 	private JFXDrawer drawer;
 	@FXML
 	private JFXHamburger hamberger;
-	@FXML private VBox drawerPane;
+	 private VBox side;
 	
 	
         @Override
 	public void initialize(URL location, ResourceBundle resources) {
                 root.getStyleClass().add("root");
-		 drawer.setSidePane(drawerPane); /** the the side panel in the drawer */
-		
+                 sidePanelSetter(); /** the the side panel in the drawer */
+		setEvents();
 	}
         
         @FXML
@@ -101,6 +106,46 @@ public class NewUserController implements Initializable, ControlledScreen
 		 myController = screenPage;
 		
 	}
+        
+        
+        private void sidePanelSetter()
+        {
+               try {
+               side = FXMLLoader.load(getClass().getResource("/com/summercoder/MVC/views/LoginViewDrawer.fxml"));
+            } catch (IOException ex) {
+                Logger.getLogger(LongInController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+           drawer.setSidePane(side);
+          
+           
+          
+        }
+        
+        private void setEvents()
+        {
+             for(Node node :side.getChildren())
+           {
+               if(node.getAccessibleText() != null)
+               {
+                  
+                    node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
+                        
+                         switch(node.getId()) {
+                             case "account": myController.setScreen(GUITestester.screen1ID);
+                             break;
+                             case "exit": myController.setScreen(GUITestester.screen1ID);
+                             break;
+                             case "about": myController.setScreen(GUITestester.screen1ID);
+                                
+                         }
+                        
+                    });
+               
+               }
+              
+           } 
+        }
 	
 }
 
