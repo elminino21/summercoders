@@ -42,10 +42,10 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	private void  forgotPasswordPressed(MouseEvent event)
 	{
             
-           
+            System.out.println("forgot password pressed");
         
             
-            
+            myController.setScreen(GUITestester.screen4ID);
             
             
             

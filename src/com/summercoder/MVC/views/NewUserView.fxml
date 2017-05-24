@@ -68,7 +68,7 @@
       <Label   fx:id="massageText" text="I will be a massage to the user"   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="6"/>
       <HBox GridPane.rowIndex="8">
           <padding><Insets top="25" right="25" bottom="25" left="185"/></padding>
-      <JFXButton text="Sign up" alignment="center"  style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;"/>
+      <JFXButton text="Sign up" onAction="#signupPressed" alignment="center"  style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;"/>
       </HBox>
       <!-- init center text files -->
         	

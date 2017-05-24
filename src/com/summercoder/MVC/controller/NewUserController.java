@@ -42,7 +42,14 @@ public class NewUserController implements Initializable, ControlledScreen
 		
 	}
         
-        
+        @FXML
+	private void signupPressed(ActionEvent event)
+	{
+            
+            
+		myController.setScreen(GUITestester.screen1ID);
+		event.consume();
+	}
    
     @FXML
     private void panelclicked(MouseEvent event) 
