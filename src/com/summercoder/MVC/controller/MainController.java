@@ -150,8 +150,12 @@ public class MainController implements Initializable, ControlledScreen
                         
                          switch(node.getId()) {
                              case "account": myController.setScreen(GUITestester.screen3ID);
-                             case "exit": myController.setScreen(GUITestester.screen3ID);
+                             break;
+                             case "exit": myController.setScreen(GUITestester.screen1ID);
+                             break;
                              case "about": myController.setScreen(GUITestester.screen3ID);
+                             break;
+                             case "support": myController.setScreen(GUITestester.screen5ID);
                                 
                          }
                         

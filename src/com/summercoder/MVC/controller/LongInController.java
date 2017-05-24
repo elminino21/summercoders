@@ -132,8 +132,12 @@ public class LongInController  implements Initializable, ControlledScreen  {
                         
                          switch(node.getAccessibleText()) {
                              case "account": myController.setScreen(GUITestester.screen3ID);
+                             break;
                              case "exit": myController.setScreen(GUITestester.screen3ID);
+                             break;
                              case "about": myController.setScreen(GUITestester.screen3ID);
+                             break;
+                             case "support": myController.setScreen(GUITestester.screen5ID);
                                 
                          }
                         

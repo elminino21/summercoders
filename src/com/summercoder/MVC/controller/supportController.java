@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.summercoder.MVC.controller;
 
 import com.jfoenix.controls.JFXDrawer;
@@ -19,43 +24,45 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.chart.PieChart;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-public class NewUserController implements Initializable, ControlledScreen
+/**
+ *
+ * @author elminino
+ */
+public class supportController implements Initializable, ControlledScreen
 {
 	private ScreensController myController;
-	
-   
+
 	@FXML
 	private AnchorPane root;
-        @FXML
-        private Label massageText;
 	@FXML
 	private JFXDrawer drawer;
 	@FXML
 	private JFXHamburger hamberger;
-	 private VBox side;
+         private VBox side;
+
 	
-	
-        @Override
+ 
+    @Override
 	public void initialize(URL location, ResourceBundle resources) {
                 root.getStyleClass().add("root");
-                 sidePanelSetter(); /** the the side panel in the drawer */
+		
+		  sidePanelSetter(); /** the the side panel in the drawer */
 		setEvents();
+		
 	}
         
         @FXML
-	private void signupPressed(ActionEvent event)
+	private void sendPressed(ActionEvent event)
 	{
-            
-            
+              
 		myController.setScreen(GUITestester.screen1ID);
 		event.consume();
 	}
-   
+    
     @FXML
     private void panelclicked(MouseEvent event) 
 	{
@@ -107,7 +114,6 @@ public class NewUserController implements Initializable, ControlledScreen
 		
 	}
         
-        
         private void sidePanelSetter()
         {
                try {
@@ -132,14 +138,14 @@ public class NewUserController implements Initializable, ControlledScreen
                     node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
                         
                          switch(node.getId()) {
-                             case "account": myController.setScreen(GUITestester.screen1ID);
+                             case "account": myController.setScreen(GUITestester.screen3ID);
                              break;
                              case "exit": myController.setScreen(GUITestester.screen1ID);
                              break;
-                             case "about": myController.setScreen(GUITestester.screen1ID);
-                               break;
+                             case "about": myController.setScreen(GUITestester.screen5ID);
+                             break;
                              case "support": myController.setScreen(GUITestester.screen5ID);
-                                 
+                                
                          }
                         
                     });
@@ -150,4 +156,3 @@ public class NewUserController implements Initializable, ControlledScreen
         }
 	
 }
-

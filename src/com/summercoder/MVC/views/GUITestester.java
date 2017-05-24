@@ -26,6 +26,8 @@ public class GUITestester extends Application{
 	    public static String screen3File = "/com/summercoder/MVC/views/NewUserView.fxml";
             public static String screen4ID = "resetPassword";
 	    public static String screen4File = "/com/summercoder/MVC/views/PasswordResetView.fxml";
+	    public static String screen5ID = "suppport";
+	    public static String screen5File = "/com/summercoder/MVC/views/supportView.fxml";
 	    
 	    
 
@@ -38,6 +40,7 @@ public class GUITestester extends Application{
         mainContainer.loadScreen(GUITestester.screen2ID, GUITestester.screen2File);
         mainContainer.loadScreen(GUITestester.screen3ID, GUITestester.screen3File);
         mainContainer.loadScreen(GUITestester.screen4ID, GUITestester.screen4File);
+        mainContainer.loadScreen(GUITestester.screen5ID, GUITestester.screen5File);
        
       
         mainContainer.setScreen(GUITestester.screen1ID);
