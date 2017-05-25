@@ -6,10 +6,15 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXPopup;
+import com.jfoenix.controls.JFXTextField;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
+import com.summercoder.MVC.model.DataBase;
 import com.summercoder.MVC.views.GUITestester;
+import com.summercoder.users.validator.EmailValidator;
+import com.summercoder.users.validator.PasswordValidator;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,11 +41,67 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	private JFXDrawer drawer;
 	@FXML
 	private JFXHamburger hamberger;
-	VBox side;
-       
+	VBox side;  
+        @FXML
+	private Label massageLabel;
+       @FXML
+       private JFXTextField textfieldEmail;
+       @FXML
+       private JFXPasswordField  passInput;
 	
 	
-       
+       @FXML
+	private void loginPress(ActionEvent event)
+	{
+            
+            if(checkFiels() == true && IsUser() == true )
+            {
+                myController.setScreen(GUITestester.screen2ID);
+            }
+		
+		event.consume();
+	}
+        
+        private boolean checkFiels()
+        {
+            EmailValidator email = new EmailValidator();
+            PasswordValidator pass = new PasswordValidator();
+            boolean answer = false;
+            if( (textfieldEmail.getText() ==null ||textfieldEmail.getText().isEmpty()) && (passInput.getText() ==null ||passInput.getText().isEmpty()) )
+            {
+                massageLabel.setText("Enter Email and Password to proceed");      
+                
+            }else if( (textfieldEmail.getText() ==null ||textfieldEmail.getText().isEmpty()) )
+            {
+                 massageLabel.setText("Enter Email to proceed"); 
+            }
+            else if( (passInput.getText() ==null ||passInput.getText().isEmpty()) )
+            {
+                 massageLabel.setText("Enter password to proceed"); 
+            }else if(   !email.validate( textfieldEmail.getText())   ||   !pass.validate( passInput.getText())   )
+            {
+                       massageLabel.setText("Invalid password or email entered"); 
+            }else{
+                answer = true;
+            }
+            
+            return answer;
+        }
+        
+        /**
+         * confirms the we have that user on our data base
+         * @return 
+         */
+        private boolean IsUser()
+        {
+          DataBase user = new DataBase(); 
+           return  user.hasUser(textfieldEmail.getText(), passInput.getText());         
+        }
+        
+        
+        
+        
+        
                 
          @FXML
 	private void  forgotPasswordPressed(MouseEvent event)
@@ -48,7 +109,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
             
             System.out.println("forgot password pressed");
         
-            
+           
             myController.setScreen(GUITestester.screen4ID);
             
             
@@ -57,14 +118,6 @@ public class LongInController  implements Initializable, ControlledScreen  {
 		event.consume();
 	}
         
-        @FXML
-	private void loginPress(ActionEvent event)
-	{
-            
-            
-		myController.setScreen(GUITestester.screen2ID);
-		event.consume();
-	}
         
         @FXML
 	private void newUserPressed(MouseEvent event)

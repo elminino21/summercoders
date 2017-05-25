@@ -34,9 +34,9 @@
       
       <!-- init center text files -->
         	
-        	<JFXTextField alignment="center" layoutX="250" layoutY="200" prefWidth="300" promptText="LONG IN">
+        	<JFXTextField fx:id="textfieldEmail" alignment="center" layoutX="250" layoutY="200" prefWidth="300" promptText="LONG IN">
         	</JFXTextField>
-    		<JFXPasswordField alignment="center" layoutX="250" layoutY="250" prefWidth="300" promptText="PASSWORD" />
+    		<JFXPasswordField fx:id="passInput" alignment="center" layoutX="250" layoutY="250" prefWidth="300" promptText="PASSWORD" />
     		<Label layoutX="500" layoutY="300." onMouseClicked="#newUserPressed" style="-fx-text-fill:#eb0707;-fx-font-size:15px; -fx-cursor: hand;" text="Join us" />
     		
     		<Label layoutX="250" layoutY="300" onMouseClicked="#forgotPasswordPressed" style="-fx-text-fill:#eb0707;-fx-font-size:15px; -fx-cursor: hand;" text="Forgot your password?" />
@@ -44,7 +44,7 @@
                 
     		<JFXButton buttonType="RAISED" layoutX="350" layoutY="350" onAction="#loginPress" prefHeight="40" prefWidth="100" style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;" text="Sign in" />
       
-                
+                <Label fx:id="massageLabel" layoutX="250" layoutY="430"  style="-fx-text-fill:#eb0707;-fx-font-size:15px; " text="" />
         
 
           

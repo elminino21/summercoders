@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXHamburger;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
 import com.summercoder.MVC.views.GUITestester;
+import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
+import com.sun.javafx.application.HostServicesDelegate;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
@@ -52,7 +54,7 @@ public class NewUserController implements Initializable, ControlledScreen
         @FXML
 	private void signupPressed(ActionEvent event)
 	{
-            
+        
             
 		myController.setScreen(GUITestester.screen1ID);
 		event.consume();

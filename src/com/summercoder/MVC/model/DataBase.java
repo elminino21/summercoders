@@ -55,13 +55,15 @@ public class DataBase implements IDataBase{
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
 	 */
-	private void getConnection() throws ClassNotFoundException, SQLException {
+	private Connection getConnection() throws ClassNotFoundException, SQLException {
 		  
-		  Class.forName("org.sqlite.JDBC"); // statement no needed anymore in java 8, java loads the driver by itself now
+		 // Class.forName("org.sqlite.JDBC"); // statement no needed anymore in java 8, java loads the driver by itself now
 		  // database path, if it's new database, it will be created in the project folder
 		  connection = DriverManager.getConnection("jdbc:sqlite:APPFiles/sql/appDataBase.sqlite");
 		  System.out.println("connection open successfully");  
 		  this.initialize();
+                  
+                  return connection;
 	 }
 	
 	/**
@@ -112,7 +114,7 @@ public class DataBase implements IDataBase{
 		  
 		  Statement statement = connection.createStatement();
 	      String sql = "INSERT INTO USERS ( rowid, id , password ) " +
-	                   "VALUES ( 1, 'student', 'student' );"; 
+	                   "VALUES ( 1, 'student@gmail.com', 'Student12' );"; 
 	      statement.executeUpdate(sql);
 	     
 	 }
@@ -134,15 +136,21 @@ public class DataBase implements IDataBase{
 				this.getConnection();
 			}	
 		 												
-		 String query = "INSERT INTO USERS (rowid, guessCorrectly, ANSWER) VALUES(?,?,?)";
+		 String query = "INSERT INTO USERS ( guessCorrectly, ANSWER) VALUES(?,?)";
 		 PreparedStatement  preState = connection.prepareStatement(query);
 		 
-		 preState.setLong( 1, rowid);
-		 preState.setString( 2, id );
-		 preState.setString( 3, password );
+		// preState.setLong( 1, rowid);
+		 preState.setString( 1, id );
+		 preState.setString( 2, password );
 		
 		 preState.execute();	
 		 preState.close();
+                 
+                 Statement statement = connection.createStatement();
+	      String sql = "INSERT INTO USERS ( id , password ) " +
+	                   "VALUES (  'student@gmail.com', 'Student12' );"; 
+	      statement.executeUpdate(sql);
+                 
      	
 	 }
 
@@ -161,6 +169,52 @@ public class DataBase implements IDataBase{
 	 }
 
 
-	
+	public boolean hasUser(String email, String passWord) 
+        {
+            try{
+                
+            
+                if( connection == null)
+		{
+			
+			this.getConnection();
+			
+		}
+                
+            }catch(ClassNotFoundException | SQLException e)
+            {
+                System.out.println("Fail to connect");
+            }
+            
+            try
+            {
+                Statement stmt = connection.createStatement();
+                 boolean isUser = false;
+                 ResultSet rs = stmt.executeQuery( "SELECT * FROM USERS;" );
+                while ( rs.next()  ) 
+                 {
+                String id = rs.getString("id");
+                String pass = rs.getString("password");
+                
 
+                    if(id.equals(email) && pass.equals(passWord))
+                        return true;
+               
+                if(id.equals(email)) isUser = true;
+             }
+            
+                 
+                 
+            }catch(SQLException e)
+            {
+                System.out.println("failed to get pasword and id");
+            }
+            
+  
+            return false;
+      }
+        
+        
+   
+        
 }

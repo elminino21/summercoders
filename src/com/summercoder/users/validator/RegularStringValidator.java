@@ -5,10 +5,29 @@
  */
 package com.summercoder.users.validator;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author elminino
  */
-public class RegularStringValidator {
-    
+public class RegularStringValidator implements IValidate{
+
+	private Pattern pattern;
+	private Matcher matcher;
+
+	private static final String PATTERN = "\\d";
+
+	public RegularStringValidator() {
+		pattern = Pattern.compile(PATTERN);
+	}
+        
+  
+	public boolean validate(final String input)
+        {
+		matcher = pattern.matcher(input);
+		return !matcher.matches();
+	}
+        
 }
