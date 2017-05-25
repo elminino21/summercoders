@@ -10,6 +10,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<?scenebuilder-stylesheet drawer.css?>  
+<?scenebuilder-stylesheet labelClickable.css?>
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelclicked" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.summercoder.MVC.controller.LongInController">
    <children>
@@ -50,4 +53,11 @@
       <!-- ends center text files -->
       
    </children>
+    <stylesheets>
+                      <URL value="@/drawer.css" />
+                </stylesheets> 
+                
+                <stylesheets>
+                      <URL value="@/labelClickable.css" />
+                </stylesheets> 
 </AnchorPane>

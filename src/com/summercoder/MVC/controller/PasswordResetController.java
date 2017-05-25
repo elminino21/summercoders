@@ -15,10 +15,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class PasswordResetController  implements Initializable, ControlledScreen
 {
@@ -130,8 +132,16 @@ public class PasswordResetController  implements Initializable, ControlledScreen
                         
                          switch(node.getId()) {
                              case "account": myController.setScreen(GUITestester.screen3ID);
-                             case "exit": myController.setScreen(GUITestester.screen3ID);
-                             case "about": myController.setScreen(GUITestester.screen3ID);
+                             break;
+                       
+                             case "exit": 
+                                  Stage stage = Stage.class.cast(Control.class.cast(e.getSource()).getScene().getWindow());
+                                 stage.close();
+                             break;
+                             case "about": myController.setScreen(GUITestester.screen6ID);
+                             break;
+                             case "support": myController.setScreen(GUITestester.screen5ID);
+                             
                                 
                          }
                         

@@ -142,7 +142,7 @@ public class supportController implements Initializable, ControlledScreen
                              break;
                              case "exit": myController.setScreen(GUITestester.screen1ID);
                              break;
-                             case "about": myController.setScreen(GUITestester.screen5ID);
+                             case "about": myController.setScreen(GUITestester.screen6ID);
                              break;
                              case "support": myController.setScreen(GUITestester.screen5ID);
                                 

@@ -9,6 +9,8 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.image.*?>
+<?import java.net.URL?>
+<?scenebuilder-stylesheet drawer.css?>
 
 <AnchorPane fx:id="root"  onMouseClicked="#panelclicked" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
@@ -94,4 +96,8 @@ fx:controller="com.summercoder.MVC.controller.MainController"  >
       </JFXTabPane>
       <!-- tab pane ends -->
    </children>
+                 <stylesheets>
+                      <URL value="@/drawer.css" />
+                </stylesheets> 
+    
 </AnchorPane>

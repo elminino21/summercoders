@@ -1,0 +1,4 @@
+.label:hover{
+	-fx-font-weight: bold;
+	-fx-underline: true;
+}
