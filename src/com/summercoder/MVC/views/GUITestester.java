@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -50,6 +51,7 @@ public class GUITestester extends Application{
         
                 
         stage.setTitle("Summer Coders");
+        stage.getIcons().add(new Image("file:APPFiles/Icons/hospital.png"));
         Group root = new Group();
         root.getChildren().addAll(mainContainer);
         Scene scene = new Scene(root);
