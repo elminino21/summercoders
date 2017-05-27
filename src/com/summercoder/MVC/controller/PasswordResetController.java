@@ -2,9 +2,13 @@ package com.summercoder.MVC.controller;
 
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.controls.JFXTextField;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
 import com.summercoder.MVC.views.GUITestester;
+import com.summercoder.appsupport.Sender;
+import com.summercoder.users.validator.EmailValidator;
+import com.summercoder.users.validator.PasswordValidator;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,6 +25,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.apache.commons.mail.EmailException;
 
 public class PasswordResetController  implements Initializable, ControlledScreen
 {
@@ -30,7 +35,9 @@ public class PasswordResetController  implements Initializable, ControlledScreen
 	@FXML
 	private AnchorPane root;
         @FXML
-        private Label massageText;
+        JFXTextField  textfieldEmail;
+        @FXML
+        private Label massageLabel;
 	@FXML
 	private JFXDrawer drawer;
 	@FXML
@@ -49,10 +56,44 @@ public class PasswordResetController  implements Initializable, ControlledScreen
 	private void sendPress(ActionEvent event)
 	{
             
+            if( sentEmail() == true )
+            {
+                myController.setScreen(GUITestester.screen1ID);
+            }else
+            {
+               // massageLabel.setText("Email not in database"); 
+            }	
+            Sender mgn = new Sender();
+            try {
+                mgn.send();
+            } catch (EmailException ex) {
+                Logger.getLogger(PasswordResetController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
-		myController.setScreen(GUITestester.screen1ID);
 		event.consume();
 	}
+        
+        
+        private boolean sentEmail()
+        {
+            EmailValidator email = new EmailValidator();
+            
+            boolean answer = false;
+            
+           if( (textfieldEmail.getText() ==null || textfieldEmail.getText().isEmpty()) )
+            {
+                 massageLabel.setText("Enter Email to proceed"); 
+            
+            }else if(  !email.validate( textfieldEmail.getText())     )
+            {
+                       massageLabel.setText("Invalid password or email entered"); 
+            }else{
+                answer = true;
+            }
+            
+            return answer;
+     
+        }
         
         
    

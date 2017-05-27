@@ -31,8 +31,6 @@ public class GUITestester extends Application{
 	    public static String screen5File = "/com/summercoder/MVC/views/supportView.fxml";
             public static String screen6ID = "team";
 	    public static String screen6File = "/com/summercoder/MVC/views/aboutTeamView.fxml";
-	    
-	    
 
 	@Override
 	public void start(Stage stage) throws Exception

@@ -23,6 +23,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,6 +31,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.SVGPath;
+import javafx.stage.Stage;
 
 public class LongInController  implements Initializable, ControlledScreen  {
 	
@@ -97,11 +99,6 @@ public class LongInController  implements Initializable, ControlledScreen  {
           DataBase user = new DataBase(); 
            return  user.hasUser(textfieldEmail.getText(), passInput.getText());         
         }
-        
-        
-        
-        
-        
                 
          @FXML
 	private void  forgotPasswordPressed(MouseEvent event)
@@ -110,10 +107,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
             System.out.println("forgot password pressed");
         
            
-            myController.setScreen(GUITestester.screen4ID);
-            
-            
-            
+            myController.setScreen(GUITestester.screen4ID);    
 		
 		event.consume();
 	}
@@ -129,7 +123,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	
 	@FXML
     private void panelclicked(MouseEvent event) 
-	{
+    {
 		System.out.println("root panel clicked");
 		this.drawerClose();
 		event.consume();  
@@ -137,7 +131,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	
 	@FXML
     private void drawerclicked(MouseEvent event) 
-	{
+    {
 		event.consume();    
     }
 	
@@ -150,10 +144,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) 
-	{
-             
-                  
-                        
+	{               
 		   root.getStyleClass().add("root");
 		sidePanelSetter();
                 setEvents();
@@ -184,14 +175,19 @@ public class LongInController  implements Initializable, ControlledScreen  {
                     node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
                         
                          switch(node.getAccessibleText()) {
-                             case "account": myController.setScreen(GUITestester.screen3ID);
+                             case "account":
+                                 myController.setScreen(GUITestester.screen3ID);
                              break;
-                             case "exit": myController.setScreen(GUITestester.screen3ID);
+                             case "about": 
+                                 myController.setScreen(GUITestester.screen6ID);
                              break;
-                             case "about": myController.setScreen(GUITestester.screen6ID);
+                             case "support": 
+                                 myController.setScreen(GUITestester.screen5ID);
                              break;
-                             case "support": myController.setScreen(GUITestester.screen5ID);
-                                
+                             case "exit": 
+                                 Stage stage = Stage.class.cast(Control.class.cast(e.getSource()).getScene().getWindow());
+                                 stage.close();
+                          
                          }
                         
                     });
@@ -217,9 +213,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
                 {
                     drawer.toBack();
                     
-                }
-                 
-        	
+                }    	
         }
 	}
 	/**

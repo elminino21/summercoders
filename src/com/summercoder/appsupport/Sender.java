@@ -10,6 +10,10 @@ import org.apache.commons.mail.HtmlEmail;
 
 public class Sender implements ISender{
 
+        private final String FromEmail = "joseaugusto978@gmail.com";
+         private final String EmailSender = "Summer Coders";
+         private String ToEmail = "";
+         private String textmgn ;
 	/**
 	 * 
 	 */
@@ -20,15 +24,15 @@ public class Sender implements ISender{
 
 	@Override
 	public boolean send() throws EmailException {
-		// Create the email message
+		
 		  HtmlEmail email = new HtmlEmail();
-		  email.setHostName("mail.myserver.com");
-		  email.addTo("jdoe@somewhere.org", "John Doe");
-		  email.setFrom("me@apache.org", "Me");
-		  email.setSubject("Test email with inline image");
+		  email.setHostName("smtp.googlemail.com");
+		  email.addTo("00276523@student.necc.edu", "Jose Gonzalez");
+		  email.setFrom("joseaugusto978@gmail.com", "summerdocers");
+		  email.setSubject("Test email");
 		  
 		  // embed the image and get the content id
-		  File logo = new File("placeholder.JPG");
+		  File logo = new File("file:APPFiles/images/newuser.png");
 		  String cid = email.embed(logo, "Apt log");
 		  
 		  // set the html message
@@ -39,24 +43,24 @@ public class Sender implements ISender{
 
 		  // send the email
 		  email.send();
-		return false;
+		return true;
 	}
 
 	@Override
 	public void getMassage(String massage) throws EmailException {
-		// TODO Auto-generated method stub
+		this.textmgn  = "this is you reset mass";
 		
 	}
 
 	@Override
 	public void getEmail(String email) {
-		// TODO Auto-generated method stub
+		this.ToEmail = "";
 		
 	}
 
 	@Override
 	public void getUser(int id) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
