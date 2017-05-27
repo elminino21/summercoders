@@ -63,6 +63,8 @@ public class PasswordResetController  implements Initializable, ControlledScreen
             {
                // massageLabel.setText("Email not in database"); 
             }	
+            
+            /*
             Sender mgn = new Sender();
             try {
                 mgn.send();
@@ -70,6 +72,7 @@ public class PasswordResetController  implements Initializable, ControlledScreen
                 Logger.getLogger(PasswordResetController.class.getName()).log(Level.SEVERE, null, ex);
             }
             
+            */
 		event.consume();
 	}
         
