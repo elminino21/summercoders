@@ -1,77 +1,63 @@
 package com.summercoder.appsupport;
 
-import java.io.File;
 
-import javax.print.DocFlavor.URL;
 
+import javax.mail.*;
+import javax.mail.internet.*;
+import java.util.*;
 import org.apache.commons.mail.EmailException;
-import org.apache.commons.mail.HtmlEmail;
 
+public class Sender{
+    
+    
+   
 
-public class Sender implements ISender{
+        
+             final String username = "@gmail.com";  /**gmail account */
+	     final String password = ""; //passwerd
+      
+    public  Sender( String  recipient, String body, String subject)
+    {   
+             
+            
 
-        private final String FromEmail = "joseaugusto978@gmail.com";
-         private final String EmailSender = "Summer Coders";
-         private String ToEmail = "";
-         private String textmgn ;
-	/**
-	 * 
-	 */
-	public Sender()
-	{
-		
-	}
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
 
-	@Override
-	public boolean send() throws EmailException {
-		
-		  HtmlEmail email = new HtmlEmail();
-		  email.setHostName("smtp.googlemail.com");
-		  email.addTo("00276523@student.necc.edu", "Jose Gonzalez");
-		  email.setFrom("joseaugusto978@gmail.com", "summerdocers");
-		  email.setSubject("Test email");
-		  
-		  // embed the image and get the content id
-		  File logo = new File("file:APPFiles/images/newuser.png");
-		  String cid = email.embed(logo, "Apt log");
-		  
-		  // set the html message
-		  email.setHtmlMsg("<html>The apache logo - <img src=\"cid:"+cid+"\"></html>");
+		Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
 
-		  // set the alternative message
-		  email.setTextMsg("Your email client does not support HTML messages");
+		try {
 
-		  // send the email
-		  email.send();
-		return true;
-	}
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(username));
+			message.setRecipients(Message.RecipientType.TO,
+				InternetAddress.parse(recipient));
+			message.setSubject(subject);
+			message.setText("Dear Mail Crawler,"
+				+ "\n\n No spam to my email, please!");
 
-	@Override
-	public void getMassage(String massage) throws EmailException {
-		this.textmgn  = "this is you reset mass";
-		
-	}
+			Transport.send(message);
 
-	@Override
-	public void getEmail(String email) {
-		this.ToEmail = "";
-		
-	}
+			System.out.println("Done");
 
-	@Override
-	public void getUser(int id) {
-		
-		
-	}
+		} catch (MessagingException e) {
+                     
+			throw new RuntimeException(e);
+                          
+		}
+        
+    
+    
+    }
 
-	@Override
-	public void getTopic() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-	
 
 	
 }
