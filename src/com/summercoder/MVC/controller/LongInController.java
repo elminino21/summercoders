@@ -19,12 +19,14 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -32,6 +34,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
+import javafx.scene.input.KeyEvent;
 
 public class LongInController  implements Initializable, ControlledScreen  {
 	
@@ -89,6 +92,9 @@ public class LongInController  implements Initializable, ControlledScreen  {
             
             return answer;
         }
+
+
+
         
         /**
          * confirms the we have that user on our data base
@@ -148,12 +154,53 @@ public class LongInController  implements Initializable, ControlledScreen  {
 		   root.getStyleClass().add("root");
 		sidePanelSetter();
                 setEvents();
-                
+        getFieldCommand();
+        getPassCommand();
+
 	}
-        
-        
-        
-        private void sidePanelSetter()
+        private void getFieldCommand()
+        {
+            textfieldEmail.setOnKeyPressed(new EventHandler<KeyEvent>()
+            {
+                @Override
+                public void handle(KeyEvent ke)
+                {
+                    if (ke.getCode().equals(KeyCode.ENTER))
+                    {
+                        if(checkFiels() == true && IsUser() == true )
+                        {
+                            myController.setScreen(GUITestester.screen2ID);
+                        }
+
+                    }
+                }
+            });
+
+        }
+
+    private void getPassCommand()
+    {
+        passInput.setOnKeyPressed(new EventHandler<KeyEvent>()
+        {
+            @Override
+            public void handle(KeyEvent ke)
+            {
+                if (ke.getCode().equals(KeyCode.ENTER))
+                {
+                    if(checkFiels() == true && IsUser() == true )
+                    {
+                        myController.setScreen(GUITestester.screen2ID);
+                    }
+
+                }
+            }
+        });
+
+    }
+
+
+
+    private void sidePanelSetter()
         {
                try {
                side = FXMLLoader.load(getClass().getResource("/com/summercoder/MVC/views/LoginViewDrawer.fxml"));

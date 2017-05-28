@@ -7,13 +7,13 @@ import javax.mail.internet.*;
 import java.util.*;
 import org.apache.commons.mail.EmailException;
 
+/**
+ * sends massage from an specified gmail address.
+ */
 public class Sender{
-    
-    
-   
 
         
-             final String username = "@gmail.com";  /**gmail account */
+	     final String username = "@gmail.com";  //gmail account
 	     final String password = ""; //passwerd
       
     public  Sender( String  recipient, String body, String subject)

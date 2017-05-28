@@ -18,14 +18,15 @@
    <children>
        
         <Label layoutX="270" layoutY="0" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" text="Summer Coders" />
-   
+
+
       	 <!-- drawer init -->
      		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" onMouseClicked="#drawerclicked" prefHeight="400.0" prefWidth="200" />  		
       <!-- drawer end -->
-      
-      
-      
-      <JFXHamburger fx:id="hamberger" layoutX="20" layoutY="20" onMouseClicked="#hamburgerClicked">
+
+
+
+       <JFXHamburger fx:id="hamberger" layoutX="20" layoutY="20" onMouseClicked="#hamburgerClicked">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -54,10 +55,10 @@
       
    </children>
     <stylesheets>
-                      <URL value="@/drawer.css" />
-                </stylesheets> 
-                
-                <stylesheets>
-                      <URL value="@/labelClickable.css" />
-                </stylesheets> 
+        <URL value="@/drawer.css" />
+    </stylesheets>
+
+    <stylesheets>
+        <URL value="@/labelClickable.css" />
+    </stylesheets>
 </AnchorPane>

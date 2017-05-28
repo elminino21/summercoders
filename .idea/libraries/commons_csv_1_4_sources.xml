@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="commons-csv-1.4-sources">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/needToKepp/project jars/commons-csv-1.4.jar!/" />
+      <root url="jar://$USER_HOME$/needToKepp/project jars/commons-email-1.4.jar!/" />
+      <root url="jar://$USER_HOME$/needToKepp/project jars/jfoenix.jar!/" />
+      <root url="jar://$USER_HOME$/needToKepp/project jars/junit-4.12.jar!/" />
+      <root url="jar://$USER_HOME$/needToKepp/project jars/sqlite-jdbc-3.15.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/needToKepp/project jars/commons-email-1.4-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/needToKepp/project jars/junit-4.12-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/needToKepp/project jars/commons-csv-1.4-sources.jar!/" />
+      <root url="jar://$USER_HOME$/needToKepp/project jars/hamcrest-all-1.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

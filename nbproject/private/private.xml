@@ -5,9 +5,6 @@
         <group>
             <file>file:/home/elminino/NetBeansProjects/summercoders/src/com/summercoder/appsupport/ISender.java</file>
             <file>file:/home/elminino/NetBeansProjects/summercoders/src/com/summercoder/appsupport/Sender.java</file>
-            <file>file:/home/elminino/NetBeansProjects/summercoders/src/com/summercoder/MVC/views/PasswordResetView.fxml</file>
-            <file>file:/home/elminino/NetBeansProjects/summercoders/src/com/summercoder/MVC/controller/PasswordResetController.java</file>
-            <file>file:/home/elminino/NetBeansProjects/summercoders/src/com/summercoder/MVC/controller/LongInController.java</file>
         </group>
     </open-files>
 </project-private>

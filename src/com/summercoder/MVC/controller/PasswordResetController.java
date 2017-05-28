@@ -55,24 +55,20 @@ public class PasswordResetController  implements Initializable, ControlledScreen
       @FXML
 	private void sendPress(ActionEvent event)
 	{
-            
+
             if( sentEmail() == true )
             {
                 myController.setScreen(GUITestester.screen1ID);
             }else
             {
-               // massageLabel.setText("Email not in database"); 
+                massageLabel.setText("Email not in database");
             }	
             
-         
-            Sender mgn = new Sender();
-            try {
-                mgn.send();
-            } catch (EmailException ex) {
-                Logger.getLogger(PasswordResetController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            
+
+            //Sender mgn = new Sender();
+
+
+
 		event.consume();
 	}
         
