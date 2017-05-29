@@ -53,17 +53,17 @@
     <padding><Insets top="25" right="100" bottom="25" left="100"/></padding>
       
       
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="First Name" GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);" />
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Username" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);"/>
+      <JFXTextField fx:id="fname" prefHeight="25" prefWidth="100" alignment="center" promptText="First Name" GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField fx:id="lname" prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField  fx:id="userID" prefHeight="25" prefWidth="100" alignment="center" promptText="User ID" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);"/>
       
       
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="3" style="-fx-text-fill:rgb(77,102,204);" />
-      <JFXPasswordField  prefHeight="25" prefWidth="100" alignment="center" promptText="Password" GridPane.rowIndex="4" style="-fx-text-fill:rgb(77,102,204);" />
-      <JFXPasswordField  prefHeight="25" prefWidth="100" alignment="center" promptText="Confirm Password" GridPane.rowIndex="5" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField fx:id="email" prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="3" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXPasswordField  fx:id="password1" prefHeight="25" prefWidth="100" alignment="center" promptText="Password" GridPane.rowIndex="4" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXPasswordField fx:id="password2"  prefHeight="25" prefWidth="100" alignment="center" promptText="Confirm Password" GridPane.rowIndex="5" style="-fx-text-fill:rgb(77,102,204);" />
       
       <Label  text="By clicking on sign up, you agree to the terms and condictions of the service." GridPane.rowIndex="7" style="-fx-text-fill:rgb(77,102,204);"/>
-      <Label   fx:id="massageText" text="I will be a massage to the user"   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="6"/>
+      <Label   fx:id="massageText" text=""   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="6"/>
       <HBox GridPane.rowIndex="8">
           <padding><Insets top="25" right="25" bottom="25" left="185"/></padding>
       <JFXButton text="Sign up" onAction="#signupPressed" alignment="center"  style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;"/>

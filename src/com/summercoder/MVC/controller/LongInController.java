@@ -111,8 +111,6 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	{
             
             System.out.println("forgot password pressed");
-        
-           
             myController.setScreen(GUITestester.screen4ID);    
 		
 		event.consume();
@@ -122,7 +120,6 @@ public class LongInController  implements Initializable, ControlledScreen  {
         @FXML
 	private void newUserPressed(MouseEvent event)
 	{
-                //System.out.print
 		myController.setScreen(GUITestester.screen3ID);
 		event.consume();
 	}

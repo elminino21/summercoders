@@ -4,7 +4,10 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
+import com.summercoder.MVC.model.UserTableInfo;
 import com.summercoder.MVC.views.GUITestester;
+import com.summercoder.users.validator.EmailValidator;
+import com.summercoder.users.validator.PasswordValidator;
 import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
 import com.sun.javafx.application.HostServicesDelegate;
 import java.io.IOException;
@@ -27,6 +30,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import com.jfoenix.controls.*;
 
 public class NewUserController implements Initializable, ControlledScreen
 {
@@ -42,6 +46,18 @@ public class NewUserController implements Initializable, ControlledScreen
 	@FXML
 	private JFXHamburger hamberger;
 	 private VBox side;
+	 @FXML
+    private JFXTextField fname;
+    @FXML
+    private JFXTextField lname;
+    @FXML
+    private JFXTextField userID;
+    @FXML
+    private JFXTextField email;
+    @FXML
+    private JFXPasswordField password1;
+    @FXML
+    private JFXPasswordField password2;
 	
 	
         @Override
@@ -51,14 +67,20 @@ public class NewUserController implements Initializable, ControlledScreen
 		setEvents();
 	}
         
-        @FXML
+    @FXML
 	private void signupPressed(ActionEvent event)
 	{
-        
-            
-		myController.setScreen(GUITestester.screen1ID);
+
+        if(checkFiels() == true  )
+        {
+            this.getAllFields();
+            myController.setScreen(GUITestester.screen1ID);
+            this.clearAllFiels();
+        }
 		event.consume();
 	}
+
+
    
     @FXML
     private void panelclicked(MouseEvent event) 
@@ -67,6 +89,9 @@ public class NewUserController implements Initializable, ControlledScreen
 		this.drawerClose();
 		event.consume();  
     }
+
+
+
 	
 	@FXML
     private void drawerclicked(MouseEvent event) 
@@ -154,6 +179,77 @@ public class NewUserController implements Initializable, ControlledScreen
               
            } 
         }
+
+
+    /**
+     * let's the user know if any field is missing
+     * @return
+     */
+    private boolean checkFiels()
+    {
+        EmailValidator emailValidator = new EmailValidator();
+        PasswordValidator pass = new PasswordValidator();
+
+        boolean answer = false;
+
+        if( hasInput()  )
+        {
+            massageText.setText("Complete all fields before proceeding");
+
+        }else if( !emailValidator.validate( email.getText())   )
+        {
+            massageText.setText("Invalid email address");
+        }else if( !pass.validate( password1.getText())   )
+        {
+            massageText.setText("Password must be 8 digit long, has a capital letter and at least a number");
+        }
+        else if(  !password1.getText().equals( password2.getText() )  )
+        {
+            massageText.setText("Entered Passwords do not match");
+        } else{
+            answer = true;
+        }
+
+        return answer;
+    }
+
+    /**
+     * creates new user from fiels
+     */
+    private void getAllFields()
+    {
+        UserTableInfo newUser = new UserTableInfo();
+        newUser.addNewUser( fname.getText(),  lname.getText(),  userID.getText(),  email.getText(),  password1.getText() );
+
+    }
+
+    private void clearAllFiels()
+    {
+        fname.clear();
+        lname.clear();
+        userID.clear();
+        email.clear();
+        password1.clear();
+        password2.clear();
+
+    }
+
+
+
+
+    /**
+     * returns false if any input field is empty or nulll
+     *
+     * @return
+     */
+    private boolean hasInput()
+    {
+        return ( fname.getText() == null ||fname.getText().isEmpty() ) || (lname.getText() ==null ||lname.getText().isEmpty() )
+                || (userID.getText() ==null ||userID.getText().isEmpty() ) || (email.getText() ==null && email.getText().isEmpty() )
+                || (password1.getText() ==null || password1.getText().isEmpty() ) || (password2.getText() ==null || password2.getText().isEmpty() );
+    }
+
+
 	
 }
 
