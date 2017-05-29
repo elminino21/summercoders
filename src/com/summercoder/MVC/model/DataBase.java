@@ -128,9 +128,9 @@ public class DataBase implements IDataBase{
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
-	 @Override
 	 public void add( long rowid, String id, String password  ) throws SQLException, ClassNotFoundException
 	 {
+
 		 if( connection == null)
 			{
 				this.getConnection();
@@ -215,6 +215,6 @@ public class DataBase implements IDataBase{
       }
         
         
-   
+
         
 }

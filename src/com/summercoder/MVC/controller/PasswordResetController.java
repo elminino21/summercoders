@@ -58,16 +58,9 @@ public class PasswordResetController  implements Initializable, ControlledScreen
 
             if( sentEmail() == true )
             {
+                Sender mgn = new Sender(textfieldEmail.getText(), "This is a test email(body)", "test title" );
                 myController.setScreen(GUITestester.screen1ID);
-            }else
-            {
-                massageLabel.setText("Email not in database");
-            }	
-            
-
-            //Sender mgn = new Sender();
-
-
+            }
 
 		event.consume();
 	}
@@ -85,7 +78,7 @@ public class PasswordResetController  implements Initializable, ControlledScreen
             
             }else if(  !email.validate( textfieldEmail.getText())     )
             {
-                       massageLabel.setText("Invalid password or email entered"); 
+                       massageLabel.setText("Invalid email entered");
             }else{
                 answer = true;
             }

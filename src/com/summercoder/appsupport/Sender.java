@@ -13,8 +13,8 @@ import org.apache.commons.mail.EmailException;
 public class Sender{
 
         
-	     final String username = "@gmail.com";  //gmail account
-	     final String password = ""; //passwerd
+	     final String username = "joseaugusto978test@gmail.com";  //gmail account
+	     final String password = "madelin8"; //passwerd
       
     public  Sender( String  recipient, String body, String subject)
     {   
@@ -41,8 +41,7 @@ public class Sender{
 			message.setRecipients(Message.RecipientType.TO,
 				InternetAddress.parse(recipient));
 			message.setSubject(subject);
-			message.setText("Dear Mail Crawler,"
-				+ "\n\n No spam to my email, please!");
+			message.setText(body );
 
 			Transport.send(message);
 
