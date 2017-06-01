@@ -49,6 +49,7 @@ public class ScreensController extends StackPane {
             this.FXMLloder(name, resource);
             return true;
         } catch (Exception e) {
+            System.out.println("problem when loading screen found");
             System.out.println(e.getMessage());
             return false;
         }

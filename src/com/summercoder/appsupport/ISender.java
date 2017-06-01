@@ -9,10 +9,7 @@ import org.apache.commons.mail.EmailException;
  */
 public interface  ISender {
 		
-	boolean send() throws EmailException;
-	void getMassage(String massage) throws EmailException;
-	void getEmail(String email);
-	void getUser(int id);
-	void getTopic();
+	boolean send(String  recipient, String body, String subject);
+	
 		
 }

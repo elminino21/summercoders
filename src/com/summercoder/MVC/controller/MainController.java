@@ -21,6 +21,14 @@ import javafx.scene.shape.Circle;
 import com.jfoenix.controls.JFXTabPane;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
+import com.summercoder.MVC.views.GUITestester;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.Control;
+import javafx.stage.Stage;
 
 public class MainController implements Initializable, ControlledScreen
 {
@@ -30,27 +38,31 @@ public class MainController implements Initializable, ControlledScreen
     private ObservableList<PieChart.Data> pieChartData; 
 	private Random rand = new Random();
 	@FXML
-	private AnchorPane rootPane;
+	private AnchorPane root;
 	@FXML
 	private JFXDrawer drawer;
 	@FXML
 	private JFXHamburger hamberger;
-	@FXML private VBox drawerPane;
+         private VBox side;
+
 	
     @FXML
-    private void papenclick(MouseEvent event) {
+    private void papenclick(MouseEvent event) 
+    {
          
     	this.addTestData();
-        
+       
         piechart.setData(pieChartData);
     }
 	
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
+                root.getStyleClass().add("root");
 		this.addTestData();
 		piechart.legendVisibleProperty().setValue(false);
 		 piechart.setData(pieChartData);
-		 drawer.setSidePane(drawerPane); /** the the side panel in the drawer */
+		  sidePanelSetter(); /** the the side panel in the drawer */
+		setEvents();
 		
 	}
     private void addTestData()
@@ -114,5 +126,48 @@ public class MainController implements Initializable, ControlledScreen
 		 myController = screenPage;
 		
 	}
+        
+        private void sidePanelSetter()
+        {
+               try {
+               side = FXMLLoader.load(getClass().getResource("/com/summercoder/MVC/views/LoginViewDrawer.fxml"));
+            } catch (IOException ex) {
+                Logger.getLogger(LongInController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+           drawer.setSidePane(side);
+          
+           
+          
+        }
+        
+        private void setEvents()
+        {
+             for(Node node :side.getChildren())
+           {
+               if(node.getAccessibleText() != null)
+               {
+                  
+                    node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
+                        
+                         switch(node.getId()) {
+                             case "account": myController.setScreen(GUITestester.screen3ID);
+                             break;
+                             case "exit": 
+                                  Stage stage = Stage.class.cast(Control.class.cast(e.getSource()).getScene().getWindow());
+                                 stage.close();
+                             break;
+                             case "about": myController.setScreen(GUITestester.screen6ID);
+                             break;
+                             case "support": myController.setScreen(GUITestester.screen5ID);
+                                
+                         }
+                        
+                    });
+               
+               }
+              
+           } 
+        }
 	
 }

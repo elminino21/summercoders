@@ -9,18 +9,24 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.image.*?>
+<?import java.net.URL?>
+<?scenebuilder-stylesheet drawer.css?>
 
-<AnchorPane fx:id="rootPane"  onMouseClicked="#panelclicked" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" style="-fx-background-color: transparent;"
+<AnchorPane fx:id="root"  onMouseClicked="#panelclicked" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
 minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
-fx:controller="com.summercoder.MVC.controller.MainController"   >
+fx:controller="com.summercoder.MVC.controller.MainController"  >
    <children>
    
+       
+       <VBox layoutX="230" layoutY="0" alignment="CENTER">
+       <!-- title -->
+      <Label  text="Summer Coders" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" />
+      	<padding><Insets top="0" right="25" bottom="25" left="25"/></padding>
+       </VBox>
+       
     <!-- drawer init -->
-     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" >
-     			<children> 
-    				  <fx:include source="LoginViewDrawer.fxml"  fx:id="drawerPane"/> 
-      			</children>
-      		</JFXDrawer >
+     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" />
+
       <!-- drawer end -->
       	 
       
@@ -32,10 +38,10 @@ fx:controller="com.summercoder.MVC.controller.MainController"   >
       	</JFXHamburger>
       	 <!-- hamburger ends -->
       	<!-- tab pane init -->
-      <JFXTabPane layoutX="20" layoutY="100" prefHeight="700" prefWidth="800">
-         <tabs>
+      <JFXTabPane layoutX="20" layoutY="100" prefHeight="700" prefWidth="800"  >
+         <tabs >
       <!-- tab1 pane init -->
-            <Tab text="option1">
+            <Tab text="option1" style="-fx-background-color:rgb(77,102,204)">
                <content>
                
                		<HBox onMouseClicked="#papenclick" > 
@@ -59,7 +65,7 @@ fx:controller="com.summercoder.MVC.controller.MainController"   >
             </Tab>
         <!-- tab1 pane ends -->
         <!-- tab2 pane init -->
-            <Tab text="option2">
+            <Tab text="option2" style="-fx-background-color:rgb(77,102,204)">
                <content>
                   
                   	<HBox fx:id="secondTap"> 
@@ -77,7 +83,7 @@ fx:controller="com.summercoder.MVC.controller.MainController"   >
             </Tab>
             <!-- tab2 pane ends -->
             <!-- tab3 pane init -->
-            <Tab text="option3" >
+            <Tab text="option3" style="-fx-background-color:rgb(77,102,204)">
             	<content>
                <VBox> 
                <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
@@ -90,4 +96,8 @@ fx:controller="com.summercoder.MVC.controller.MainController"   >
       </JFXTabPane>
       <!-- tab pane ends -->
    </children>
+                 <stylesheets>
+                      <URL value="@/drawer.css" />
+                </stylesheets> 
+    
 </AnchorPane>

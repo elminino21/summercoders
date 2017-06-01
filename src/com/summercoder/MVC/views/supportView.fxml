@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.URL?>
+<?scenebuilder-stylesheet drawer.css?>
+
+<AnchorPane fx:id="root"  onMouseClicked="#panelclicked" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="com.summercoder.MVC.controller.supportController"  >
+   <children>
+   
+       
+       <VBox layoutX="230" layoutY="0" alignment="CENTER">
+       <!-- title -->
+      <Label  text="Contact us" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" />
+      	<padding><Insets top="0" right="25" bottom="25" left="25"/></padding>
+       </VBox>
+       
+    <!-- drawer init -->
+     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" />
+
+      <!-- drawer end -->
+      	 
+      
+      <!-- hamburger init -->
+      <JFXHamburger fx:id="hamberger" onMouseClicked="#hamburgerClicked" layoutX="20" layoutY="20">
+         	<opaqueInsets>
+           		 <Insets />
+         	</opaqueInsets>  
+      	</JFXHamburger>
+      	 <!-- hamburger ends -->
+         
+      	<!-- grid pane init -->
+        
+        <GridPane  layoutX="90" layoutY="100" hgap="20" vgap="40" > 
+ 
+    <padding><Insets top="25" right="100" bottom="25" left="100"/></padding>
+      
+      
+      <JFXTextField  prefHeight="25" prefWidth="150" alignment="center" promptText="First Name" GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);" />  
+      <JFXTextArea  prefHeight="100" prefWidth="100"  promptText="Your massage here *" GridPane.rowIndex="3" style="-fx-text-fill:rgb(77,102,204);" />
+      <Label   fx:id="massageText" text="I will be a massage to the user"   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="4"/>
+      <HBox GridPane.rowIndex="8">
+          <padding><Insets top="0" right="0" bottom="25" left="150"/></padding>
+      <JFXButton text="SEND MASSAGE" onAction="#sendPressed" alignment="center"  style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;"/>
+      </HBox>
+      <!-- init center text files -->
+        	
+        </GridPane>
+        
+        
+      <!-- grid pane ends -->
+   </children>
+                <stylesheets>
+                      <URL value="@/drawer.css" />
+                </stylesheets>  
+</AnchorPane>

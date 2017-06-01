@@ -31,13 +31,15 @@ public class DatabaseTest {
 	/**
 	 * all the @test are ran one after the other
 	 */
-	@Test
-	public void test() {
+	
+        @Test
+	public void test() throws ClassNotFoundException   {
 		
 		try {
 			assertEquals(true, result.next());
+                        
 						
-		} catch (SQLException e) {
+		}catch (SQLException   e) {
 			
 			e.printStackTrace();
 		}

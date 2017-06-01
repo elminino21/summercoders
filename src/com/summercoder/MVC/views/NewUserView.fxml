@@ -1,8 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>  
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import com.jfoenix.controls.JFXDrawer?>  
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<?scenebuilder-stylesheet drawer.css?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+            onMouseClicked="#panelclicked" prefHeight="800" prefWidth="800"  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.summercoder.MVC.controller.NewUserController">
+   <children>
+   
+       <VBox layoutX="230" layoutY="0" alignment="CENTER">
+       <!-- title -->
+      <Label  text="Summer Coders" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" />
+      	<padding><Insets top="0" right="25" bottom="25" left="25"/></padding>
+      <ImageView  fitHeight="100" fitWidth="100"   pickOnBounds="true" preserveRatio="true"  >
+           
+            <image>       
+                <Image url="file:APPFiles/images/newuser.png" />
+            </image>
+      	</ImageView>
+       </VBox>
+        
+      
+      	 <!-- drawer init -->
+     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" />
+      <!-- drawer end -->
+      
+      
+      <JFXHamburger fx:id="hamberger" layoutX="20" layoutY="20" onMouseClicked="#hamburgerClicked">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+        
+      	</JFXHamburger>
+        
+        
+     
+      <GridPane  layoutX="50" layoutY="150" hgap="20" vgap="40" > 
+ 
+    <padding><Insets top="25" right="100" bottom="25" left="100"/></padding>
+      
+      
+      <JFXTextField fx:id="fname" prefHeight="25" prefWidth="100" alignment="center" promptText="First Name" GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField fx:id="lname" prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField  fx:id="userID" prefHeight="25" prefWidth="100" alignment="center" promptText="User ID" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);"/>
+      
+      
+      <JFXTextField fx:id="email" prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="3" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXPasswordField  fx:id="password1" prefHeight="25" prefWidth="100" alignment="center" promptText="Password" GridPane.rowIndex="4" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXPasswordField fx:id="password2"  prefHeight="25" prefWidth="100" alignment="center" promptText="Confirm Password" GridPane.rowIndex="5" style="-fx-text-fill:rgb(77,102,204);" />
+      
+      <Label  text="By clicking on sign up, you agree to the terms and condictions of the service." GridPane.rowIndex="7" style="-fx-text-fill:rgb(77,102,204);"/>
+      <Label   fx:id="massageText" text=""   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="6"/>
+      <HBox GridPane.rowIndex="8">
+          <padding><Insets top="25" right="25" bottom="25" left="185"/></padding>
+      <JFXButton text="Sign up" onAction="#signupPressed" alignment="center"  style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;"/>
+      </HBox>
+      <!-- init center text files -->
+        	
+        </GridPane>	
+    		
+    		
+    <!-- layoutX="${rootPane.prefWidth }"  prefWidth="${node.parent.width}" layoutY="${rootPane.prefHeight}" -->
+      <!-- ends center text files -->
+      
+   </children>
+                <stylesheets>
+                      <URL value="@/drawer.css" />
+                </stylesheets>  
 </AnchorPane>
-
