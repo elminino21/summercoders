@@ -189,13 +189,14 @@ public class webScanner
             item.setCaloriesFromFat(Integer.parseInt(test2));
             
             
-            //----SETS Sugar---//Has total fat through protein.
+            //---------SETS total fat through protein.----
             org.jsoup.nodes.Element NutricianFacts = downloadedPage.select("div.NutritionFacts-allFacts-nutrientInfo").first();
             String s = NutricianFacts.html();
             int []nutritianCount = new int[10];
              int countForSugar = 0;
              
              //Lists for nutritian data
+             //Creates Lists
               ArrayList DietaryFiberList = new ArrayList();
               ArrayList TransFat = new ArrayList();
               ArrayList Cholesteral = new ArrayList();
@@ -205,7 +206,8 @@ public class webScanner
             
             for(int z = 0; z != s.length(); z++)
             {
-                //Creates Lists
+                
+                //---------Boundaries-are-set-off---- 
                 //Dietary Fiber done
                 if(s.charAt(z) == 'D')
                 {
@@ -249,8 +251,7 @@ public class webScanner
                 }
                
                 
-                
-                //Loads to arraylists
+                //---------------------Loads to arraylists-
                 //Sugar
                 if(countForSugar == 3)
                 {
@@ -361,18 +362,61 @@ public class webScanner
                 
             }
             
+            
+            
+            //----------Coverts from arraylist to string-----------
             test = "";
+            //Sugar
             for(int z = 0; z != sugarList.size(); z++)
             {
                 test = test + sugarList.get(z);
             }
             item.setSugar(Integer.parseInt(test));
             
-            //System.out.println(Protein.size());
-            System.out.println(test);
-             System.out.println(s);
-            //org.jsoup.nodes.Element Vitamins = downloadedPage.select("div.NutritionFacts-allFacts-nutrientInfo").first();
-            // String v = Vitamins.html();
+            //Dietary Fiber
+            test= "";
+            for(int z = 0; z !=  DietaryFiberList.size(); z++)
+            {
+                test = test + DietaryFiberList.get(z);
+            }
+            item.setDietaryfiber(test);
+            
+            //Trans Fat
+             test= "";
+            for(int z = 0; z !=  TransFat.size(); z++)
+            {
+                test = test + TransFat.get(z);
+            }
+            item.setTransFat(test);
+            
+            //Cholestoral
+             test= "";
+            for(int z = 0; z != Cholesteral.size(); z++)
+            {
+                test = test + Cholesteral.get(z);
+            }
+            item.setCholesterol(test);
+            
+             //Carbs
+             test= "";
+            for(int z = 0; z !=  Carbs.size(); z++)
+            {
+                test = test + Carbs.get(z);
+            }
+            item.setCarbohydrates(test);
+            
+             //Protein 
+            test= "";
+            for(int z = 0; z !=  Protein.size(); z++)
+            {
+                test = test + Protein.get(z);
+            }
+            item.setProtein(test);
+            
+            /*System.out.println();
+              System.out.println();
+              System.out.println(s);*/
+            
             
             
             

@@ -15,6 +15,7 @@ public class Item //The form that our pieces of food, medicine and other trackab
     protected String Carbohydrates;
     protected String Protein;
     protected String Dietaryfiber;
+    
     protected int expiryDate;
     private boolean isFood;
     private boolean isMedicine; //Not mutually exclusive with isFood: tea, vitamin supplements, etc. can be both
