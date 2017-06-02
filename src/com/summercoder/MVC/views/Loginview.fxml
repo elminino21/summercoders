@@ -38,9 +38,17 @@
         	<JFXTextField fx:id="textfieldEmail" alignment="center" layoutX="250" layoutY="200" prefWidth="300" promptText="LONG IN">
         	</JFXTextField>
     		<JFXPasswordField fx:id="passInput" alignment="center" layoutX="250" layoutY="250" prefWidth="300" promptText="PASSWORD" />
-    		<Label layoutX="500" layoutY="300." onMouseClicked="#newUserPressed" style="-fx-text-fill:#eb0707;-fx-font-size:15px; -fx-cursor: hand;" text="Join us" />
+    		<Label layoutX="500" layoutY="300." onMouseClicked="#newUserPressed" style="-fx-text-fill:#eb0707;-fx-font-size:15px; -fx-cursor: hand;" text="Join us" >
+                <stylesheets>
+                    <URL value="@/labelClickable.css" />
+                </stylesheets>
+            </Label>
     		
-    		<Label layoutX="250" layoutY="300" onMouseClicked="#forgotPasswordPressed" style="-fx-text-fill:#eb0707;-fx-font-size:15px; -fx-cursor: hand;" text="Forgot your password?" />
+    		<Label layoutX="250" layoutY="300" onMouseClicked="#forgotPasswordPressed" style="-fx-text-fill:#eb0707;-fx-font-size:15px; -fx-cursor: hand;" text="Forgot your password?" >
+                <stylesheets>
+                    <URL value="@/labelClickable.css" />
+                </stylesheets>
+            </Label>
     		
                 
     		<JFXButton buttonType="RAISED" layoutX="350" layoutY="350" onAction="#loginPress" prefHeight="40" prefWidth="100" style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;" text="Sign in" />
@@ -58,7 +66,5 @@
         <URL value="@/drawer.css" />
     </stylesheets>
 
-    <stylesheets>
-        <URL value="@/labelClickable.css" />
-    </stylesheets>
+
 </AnchorPane>

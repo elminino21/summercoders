@@ -59,11 +59,11 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	private void loginPress(ActionEvent event)
 	{
             
-            if(checkFiels() == true && IsUser() == true )
-            {
-                myController.setScreen(GUITestester.screen2ID);
-            }
-		
+//            if(checkFiels() == true && IsUser() == true )
+//            {
+              myController.setScreen(GUITestester.screen2ID);
+//            }
+//
 		event.consume();
 	}
         
