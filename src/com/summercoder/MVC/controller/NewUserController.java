@@ -218,7 +218,7 @@ public class NewUserController implements Initializable, ControlledScreen
      */
     private void getAllFields()
     {
-        UserTableInfo newUser = new UserTableInfo();
+        UserTableInfo newUser = new UserTableInfo("newUser");
         newUser.addNewUser( fname.getText(),  lname.getText(),  userID.getText(),  email.getText(),  password1.getText() );
 
     }

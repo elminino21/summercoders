@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="activation">
+  <library name="jsoup-1.10.2">
     <CLASSES>
-      <root url="jar://$USER_HOME$/needToKepp/project jars/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../project jar/jsoup-1.10.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

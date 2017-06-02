@@ -5,7 +5,7 @@ package com.summercoder.appsupport;
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.*;
-import org.apache.commons.mail.EmailException;
+
 
 /**
  * sends massage from an specified gmail address.
