@@ -6,38 +6,81 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
-
 <?scenebuilder-stylesheet drawer.css?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelclicked" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.summercoder.MVC.controller.AboutTeamController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelclicked" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.summercoder.MVC.controller.AboutTeamController">
    <children>
-   
+
        <VBox alignment="CENTER" layoutX="230" layoutY="0">
        <!-- title -->
       <Label style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" text="Our Team" />
       	<padding><Insets bottom="25" left="25" right="25" top="0" /></padding>
        </VBox>
-        
-      
-      	 <!-- drawer init -->
+
+
+
+       <GridPane alignment="center" hgap="100" layoutX="50" layoutY="150" vgap="150">
+
+
+           <Circle fx:id="member1" radius="70" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+           <Circle fx:id="member2" radius="70" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+           <Circle fx:id="member3" radius="70" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+           <Circle fx:id="member4" radius="70" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+           <Circle fx:id="member5" radius="70" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+           <Circle fx:id="member6" radius="70" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+           <Circle fx:id="member7" radius="70" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+           <Circle fx:id="member8" radius="70" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+           <Circle fx:id="member9" radius="70" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+
+
+           <columnConstraints>
+               <ColumnConstraints />
+            <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+           </rowConstraints>
+           <!-- init center text files -->
+
+       </GridPane>
+
+
+       <!-- drawer init -->
      		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" onMouseClicked="#drawerclicked" prefHeight="400.0" prefWidth="200" />
       <!-- drawer end -->
 
-      
+
       <JFXHamburger fx:id="hamberger" layoutX="20" layoutY="20" onMouseClicked="#hamburgerClicked">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
-        
+
       	</JFXHamburger>
     <!-- layoutX="${rootPane.prefWidth }"  prefWidth="${node.parent.width}" layoutY="${rootPane.prefHeight}" -->
       <!-- ends center text files -->
-      
+
    </children>
                 <stylesheets>
-                      <URL value="@/drawer.css"/>
+                      <URL value="@/drawer.css" />
                 </stylesheets>  
 </AnchorPane>

@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXDrawer?>
 <?import com.jfoenix.controls.JFXHamburger?>
-<?import com.jfoenix.controls.JFXRippler?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import java.net.URL?>
@@ -18,6 +17,10 @@
 <?import javafx.scene.layout.VBox?>
 <?scenebuilder-stylesheet drawer.css?>
 
+<?import org.controlsfx.control.textfield.CustomTextField?>
+<?import com.cathive.fonts.fontawesome.FontAwesomeIconView?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import com.jfoenix.controls.JFXTextField?>
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelclicked" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.summercoder.MVC.controller.MainController">
    <children>
    
@@ -106,11 +109,29 @@
             </Tab>
             <!-- tab3 pane ends -->
          </tabs>
+
       </JFXTabPane>
+       <!-- tab pane ends -->
 
 
-      <!-- tab pane ends -->
-   </children>
+
+
+      <JFXTextField layoutX="620.0" layoutY="98.0" >
+          <stylesheets>
+              <URL value="@/search.css" />
+          </stylesheets>
+
+      </JFXTextField>
+
+
+       <FontIcon iconLiteral="eli-search" layoutX="750.0" layoutY="127.0" iconColor="white" iconSize="28" >
+
+       </FontIcon>
+
+
+      <!-- ends shearch bar implementation -->
+
+    </children>
                  <stylesheets>
                       <URL value="@/drawer.css" />
                 </stylesheets> 

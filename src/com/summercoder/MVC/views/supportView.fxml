@@ -45,11 +45,11 @@ fx:controller="com.summercoder.MVC.controller.supportController"  >
     <padding><Insets top="25" right="0" bottom="25" left="175"/></padding>
       
       
-      <JFXTextField  prefHeight="25" prefWidth="300" alignment="center" promptText="First Name" GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);" />
-      <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);" />  
-      <JFXTextArea  prefHeight="100" prefWidth="100"  promptText="Your massage here *" GridPane.rowIndex="3" style="-fx-text-fill:rgb(77,102,204);" />
-      <Label   fx:id="massageText" text="I will be a massage to the user"   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="4"/>
+      <JFXTextField  fx:id="fname" prefHeight="25" prefWidth="300" alignment="center" promptText="First Name" GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField fx:id= "lname"  prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField  fx:id="userEmail" prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextArea fx:id="messageFromUser" prefHeight="100" prefWidth="100"  promptText="Your massage here *" GridPane.rowIndex="3" style="-fx-text-fill:rgb(77,102,204);" />
+      <Label   fx:id="massageText" text=""   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="4"/>
       <HBox GridPane.rowIndex="7">
           <padding><Insets top="0" right="0" bottom="25" left="75"/></padding>
       <JFXButton  buttonType="RAISED" text="SEND MASSAGE" onAction="#sendPressed"

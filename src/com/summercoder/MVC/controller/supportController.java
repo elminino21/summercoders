@@ -7,6 +7,8 @@ package com.summercoder.MVC.controller;
 
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
 import com.summercoder.MVC.controller.switcher.ScreensController;
 import com.summercoder.MVC.views.GUITestester;
@@ -16,6 +18,10 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.summercoder.appsupport.Sender;
+import com.summercoder.users.validator.EmailValidator;
+import com.summercoder.users.validator.PasswordValidator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,9 +30,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 
 /**
  *
@@ -38,13 +46,28 @@ public class supportController implements Initializable, ControlledScreen
 
 	@FXML
 	private AnchorPane root;
+
 	@FXML
 	private JFXDrawer drawer;
+
 	@FXML
 	private JFXHamburger hamberger;
-         private VBox side;
 
-	
+	@FXML
+	private JFXTextField fname;
+
+	@FXML
+	private JFXTextField lname;
+
+	@FXML
+	private JFXTextField userEmail;
+	@FXML
+	private Label massageText;
+
+	private VBox side;
+
+    @FXML
+    private JFXTextArea messageFromUser;
  
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -54,12 +77,42 @@ public class supportController implements Initializable, ControlledScreen
 		setEvents();
 		
 	}
-        
+
+
+        private boolean checkFields()
+		{
+			EmailValidator email = new EmailValidator();
+			boolean answer = false;
+			if(   ((userEmail.getText() == null) || userEmail.getText().isEmpty()) && ((messageFromUser.getText() == null) || messageFromUser.getText().isEmpty()) &&
+                    ((fname.getText() == null) || fname.getText().isEmpty()) && ((lname.getText() == null) || lname.getText().isEmpty()))
+			{
+                massageText.setText("Fill all fields to proceed");
+
+			}
+			else if(   !email.validate( userEmail.getText())   )
+			{
+                massageText.setText("Invalid email entered");
+			}else{
+				answer = true;
+			}
+
+			return answer;
+
+		}
         @FXML
 	private void sendPressed(ActionEvent event)
 	{
-              
-		myController.setScreen(GUITestester.screen1ID);
+		if( checkFields() == true )
+		{
+			Sender mgn = new Sender( userEmail.getText(),  messageFromUser.getText(), "test title" );
+			myController.setScreen(GUITestester.screen1ID);
+			clearFields();
+		}else
+		{
+			AudioClip plonkSound = new AudioClip("file:APPFiles/sounds/error.mp3");
+			plonkSound.play();
+		}
+
 		event.consume();
 	}
     
@@ -154,5 +207,13 @@ public class supportController implements Initializable, ControlledScreen
               
            } 
         }
-	
+
+
+	private void clearFields()
+	{
+		fname.clear();
+		lname.clear();
+		userEmail.clear();
+		messageFromUser.clear();
+	}
 }

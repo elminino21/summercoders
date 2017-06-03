@@ -36,7 +36,7 @@ public class GUITestester extends Application{
 	public void start(Stage stage) throws Exception
 	{
 			
-	ScreensController mainContainer = new ScreensController();
+	    ScreensController mainContainer = new ScreensController();
         mainContainer.loadScreen(GUITestester.screen1ID, GUITestester.screen1File);
         mainContainer.loadScreen(GUITestester.screen2ID, GUITestester.screen2File);
         mainContainer.loadScreen(GUITestester.screen3ID, GUITestester.screen3File);

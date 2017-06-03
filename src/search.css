@@ -1,0 +1,10 @@
+.text-field:hover
+{
+         -fx-background-color: white;
+         -fx-text-fill: #4D66CC;
+ }
+
+ .text-field: pressed
+ {
+ 	-fx-background-color: transparent;
+ }

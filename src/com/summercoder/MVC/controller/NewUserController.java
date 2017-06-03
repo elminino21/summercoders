@@ -29,6 +29,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 import com.jfoenix.controls.*;
 
@@ -86,6 +87,10 @@ public class NewUserController implements Initializable, ControlledScreen
             this.getAllFields();
             myController.setScreen(GUITestester.screen1ID);
             this.clearAllFiels();
+        }else
+        {
+            AudioClip plonkSound = new AudioClip("file:APPFiles/sounds/error.mp3");
+            plonkSound.play();
         }
 		event.consume();
 	}

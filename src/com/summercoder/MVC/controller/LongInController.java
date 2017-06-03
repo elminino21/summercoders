@@ -1,6 +1,8 @@
 package com.summercoder.MVC.controller;
 
 import com.jfoenix.controls.JFXDialog;
+
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,6 +21,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +35,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
 import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
 import javafx.scene.input.KeyEvent;
@@ -58,15 +63,26 @@ public class LongInController  implements Initializable, ControlledScreen  {
        @FXML
 	private void loginPress(ActionEvent event)
 	{
-            
-//            if(checkFiels() == true && IsUser() == true )
-//            {
-              myController.setScreen(GUITestester.screen2ID);
-//            }
-//
-		event.consume();
+
+           login(event);
 	}
-        
+
+	private void login(Event e)
+    {
+//        if(checkFiels() == true && IsUser() == true )
+//        {
+            myController.setScreen(GUITestester.screen2ID);
+//        }else
+//        {
+//            AudioClip plonkSound = new AudioClip("file:APPFiles/sounds/error.mp3");
+//            plonkSound.play();
+//        }
+        clearFields();
+        e.consume();
+    }
+
+
+
         private boolean checkFiels()
         {
             EmailValidator email = new EmailValidator();
@@ -157,41 +173,22 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	}
         private void getFieldCommand()
         {
-            textfieldEmail.setOnKeyPressed(new EventHandler<KeyEvent>()
+            textfieldEmail.setOnKeyPressed( (event) -> onEnterPress( event) );
+
+        }
+
+        private void onEnterPress(KeyEvent event)
+        {
+            if (event.getCode().equals(KeyCode.ENTER))
             {
-                @Override
-                public void handle(KeyEvent ke)
-                {
-                    if (ke.getCode().equals(KeyCode.ENTER))
-                    {
-                        if(checkFiels() == true && IsUser() == true )
-                        {
-                            myController.setScreen(GUITestester.screen2ID);
-                        }
+                login(event);
 
-                    }
-                }
-            });
-
+            }
         }
 
     private void getPassCommand()
     {
-        passInput.setOnKeyPressed(new EventHandler<KeyEvent>()
-        {
-            @Override
-            public void handle(KeyEvent ke)
-            {
-                if (ke.getCode().equals(KeyCode.ENTER))
-                {
-                    if(checkFiels() == true && IsUser() == true )
-                    {
-                        myController.setScreen(GUITestester.screen2ID);
-                    }
-
-                }
-            }
-        });
+        passInput.setOnKeyPressed( (event) -> onEnterPress( event) );
 
     }
 
@@ -275,7 +272,11 @@ public class LongInController  implements Initializable, ControlledScreen  {
 		myController = screenParent;
 	}
 
-	
+    private void clearFields()
+    {
+        textfieldEmail.clear();
+        passInput.clear();;
+    }
 
 	
 }

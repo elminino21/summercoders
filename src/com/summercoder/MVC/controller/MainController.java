@@ -18,6 +18,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.scene.shape.Circle;
 import com.jfoenix.controls.JFXTabPane;
 import com.summercoder.MVC.controller.switcher.ControlledScreen;
@@ -183,6 +184,8 @@ public class MainController implements Initializable, ControlledScreen
             snackbar.prefWidth(600);
 
             snackbar.show("I AM A POP UP MESSAGE", 10000);
+            AudioClip plonkSound = new AudioClip("file:APPFiles/sounds/opera.mp3");
+            plonkSound.play();
 
         }
 

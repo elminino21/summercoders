@@ -86,3 +86,10 @@
 	-fx-background-color: #ffffff;
 
 }
+
+.search-bar
+{
+	-glyph-name: ICON_SEARCH;		
+	
+}
+

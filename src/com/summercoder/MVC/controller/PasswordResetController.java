@@ -24,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
 
@@ -60,8 +61,12 @@ public class PasswordResetController  implements Initializable, ControlledScreen
             {
                 Sender mgn = new Sender(textfieldEmail.getText(), "This is a test email(body)", "test title" );
                 myController.setScreen(GUITestester.screen1ID);
+            }else
+            {
+                AudioClip plonkSound = new AudioClip("file:APPFiles/sounds/error.mp3");
+                plonkSound.play();
             }
-
+        textfieldEmail.clear();
 		event.consume();
 	}
         
