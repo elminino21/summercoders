@@ -1,77 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?scenebuilder-stylesheet drawer.css?>
 
-<AnchorPane fx:id="root"  onMouseClicked="#panelclicked" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
-fx:controller="com.summercoder.MVC.controller.MainController"  >
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelclicked" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.summercoder.MVC.controller.MainController">
    <children>
    
        
-       <VBox layoutX="230" layoutY="0" alignment="CENTER">
+       <VBox alignment="CENTER" layoutX="230" layoutY="0">
        <!-- title -->
-      <Label  text="Summer Coders" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" />
-      	<padding><Insets top="0" right="25" bottom="25" left="25"/></padding>
+      <Label style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" text="Summer Coders" />
+      	<padding><Insets bottom="25" left="25" right="25" top="0" /></padding>
        </VBox>
        
     <!-- drawer init -->
-     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" prefHeight="400.0" prefWidth="200" onMouseClicked="#drawerclicked" />
+     		 <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" onMouseClicked="#drawerclicked" prefHeight="400.0" prefWidth="200" />
 
       <!-- drawer end -->
       	 
       
       <!-- hamburger init -->
-      <JFXHamburger fx:id="hamberger" onMouseClicked="#hamburgerClicked" layoutX="20" layoutY="20">
+      <JFXHamburger fx:id="hamberger" layoutX="20" layoutY="20" onMouseClicked="#hamburgerClicked">
          	<opaqueInsets>
            		 <Insets />
          	</opaqueInsets>  
       	</JFXHamburger>
       	 <!-- hamburger ends -->
       	<!-- tab pane init -->
-      <JFXTabPane layoutX="20" layoutY="100" prefHeight="700" prefWidth="800"  >
-         <tabs >
+      <JFXTabPane layoutX="20" layoutY="100" prefHeight="700" prefWidth="800">
+         <tabs>
       <!-- tab1 pane init -->
-            <Tab text="option1" style="-fx-background-color:rgb(77,102,204)">
+            <Tab style="-fx-background-color:rgb(77,102,204)" text="option1">
                <content>
                
-               		<HBox onMouseClicked="#papenclick" > 
+               		<HBox onMouseClicked="#papenclick"> 
                			<HBox>
                			<padding><Insets top="100" /></padding>
-               		<ImageView fitHeight="300" fitWidth="350"  layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true"  >
+               		<ImageView fitHeight="300" fitWidth="350" layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true">
          				<image>
           				  <Image url="file:APPFiles/images/placeholder.JPG" />
          				</image>
       				</ImageView>
       				</HBox>
-                  <padding><Insets top="25" right="25" bottom="25" left="0"/></padding>
                   		<VBox>   
                   			<AnchorPane> 
-                 	 		<PieChart fx:id="piechart"  prefHeight="500" prefWidth="500" layoutX="10" layoutY="0" />
+                 	 		<PieChart fx:id="piechart" layoutX="10" layoutY="0" prefHeight="500" prefWidth="500" />
                  	 		</AnchorPane>
 						</VBox>
+                  <padding><Insets bottom="25" left="0" right="25" top="25" /></padding>
          		 </HBox>
                            
                </content>
             </Tab>
         <!-- tab1 pane ends -->
         <!-- tab2 pane init -->
-            <Tab text="option2" style="-fx-background-color:rgb(77,102,204)">
+            <Tab style="-fx-background-color:rgb(77,102,204)" text="option2">
                <content>
                   
                   	<HBox fx:id="secondTap"> 
-              		 <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+              		 <padding><Insets bottom="25" left="25" right="25" top="25" /></padding>
               		 
-              		<ImageView fitHeight="550" fitWidth="550"  layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true"  >
+              		<ImageView fitHeight="550" fitWidth="550" layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true">
          				<image>
           				  <Image url="file:APPFiles/images/placeholder.JPG" />
          				</image>
@@ -83,17 +87,28 @@ fx:controller="com.summercoder.MVC.controller.MainController"  >
             </Tab>
             <!-- tab2 pane ends -->
             <!-- tab3 pane init -->
-            <Tab text="option3" style="-fx-background-color:rgb(77,102,204)">
+            <Tab style="-fx-background-color:rgb(77,102,204)" text="option3">
             	<content>
                <VBox> 
-               <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
-                <Rectangle fill="DODGERBLUE"  width="100" height="100" stroke="BLACK" strokeType="INSIDE" />
+               <padding><Insets bottom="25" left="25" right="75" top="25" /></padding>
+                     <children>
+                        <JFXTreeTableView prefHeight="619.0" prefWidth="750.0">
+                           <columns>
+                              <TreeTableColumn prefWidth="155.0" text="monday " />
+                              <TreeTableColumn prefWidth="167.0" text="day" />
+                              <TreeTableColumn prefWidth="185.0" text="sunday" />
+                              <TreeTableColumn prefWidth="209.3333740234375" text="tuesday" />
+                           </columns>
+                        </JFXTreeTableView>
+                     </children>
                   </VBox>
                   </content>
             </Tab>
             <!-- tab3 pane ends -->
          </tabs>
       </JFXTabPane>
+
+
       <!-- tab pane ends -->
    </children>
                  <stylesheets>

@@ -7,6 +7,7 @@
 <?import java.net.URL?>
 <?scenebuilder-stylesheet drawer.css?>
 
+<?import javafx.scene.layout.GridPane?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="200" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
     <children>
     
@@ -15,28 +16,30 @@
    
      <ImageView fitHeight="200" fitWidth="200" layoutX="5" layoutY="5" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:APPFiles/images/placeholder.JPG" />
+            <Image url="file:APPFiles/images/leaf.png" />
          </image>
      </ImageView>
 		
     <!--image ends -->
-		
-      <JFXButton fx:id="acount" accessibleText="account" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" text="My Account" >
+
+
+
+      <JFXButton buttonType="RAISED" fx:id="acount" accessibleText="account" prefHeight="50" prefWidth="200"  text="My Account" >
              <stylesheets>
                 <URL value="@/drawer.css" />
             </stylesheets> 
        </JFXButton>
           
-      <JFXButton fx:id="support" accessibleText="support" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" text="Support" >
+      <JFXButton buttonType="RAISED" fx:id="support" accessibleText="support" prefHeight="50" prefWidth="200"  text="Support" >
                
        </JFXButton>
-      <JFXButton fx:id="about" accessibleText="about" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" text="About us" >
+      <JFXButton buttonType="RAISED" fx:id="about" accessibleText="about" prefHeight="50" prefWidth="200"  text="About us" >
              
        </JFXButton>
-      <JFXButton fx:id="exit" accessibleText="exit" buttonType="RAISED" prefHeight="50" prefWidth="200" style="-fx-text-fill:#0f33e2;-fx-font-size:16px;" text="Exit" >
-                  
+      <JFXButton fx:id="exit" accessibleText="exit"  prefHeight="50" prefWidth="200"  text="Exit" >
+
        </JFXButton>
-    
+
    </children>
    
                  <stylesheets>

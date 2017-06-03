@@ -1,16 +1,18 @@
 .button:hover{
-	-fx-background-color: #00C853;
+	-fx-background-color: rgb(77,102,204);
 	-fx-text-fill: #ffffff;
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
-	-fx-scale-x: 1.1;
-	-fx-scale-y: 1.1;
-	-fx-scale-z: 1.1;
+	-fx-scale-x: 1.2;
+	-fx-scale-y: 1.2;
+	-fx-scale-z: 1.2;
 }
 
 .button{
 	-fx-background-color: #ffffff;
 	-fx-border-color: #93e2ff;
+	-fx-text-fill:#0f33e2;
+	-fx-font-size:16px;
 
 }
 
@@ -24,4 +26,63 @@
          -fx-scale-y: 1.1;
          -fx-scale-z: 1.1;
 }
+.tab-header-background {
+    -fx-background-color: rgb(77, 102, 204) ;
+    }
 
+
+ /**
+  *snack bar settings
+  */
+
+.jfx-snackbar-content {
+    	-fx-background-color: rgb(77,102,204);
+    -fx-padding: 5;
+        -fx-spacing: 5;
+}
+
+.jfx-snackbar-toast {
+	-fx-text-fill: WHITE;
+	-fx-font-weight: bold;
+}
+
+.jfx-snackbar-action {
+	-fx-text-fill: #ff4081;
+}
+
+.jfx-snackbar-content:hover{
+	-fx-background-color: #00c853;
+	-fx-scale-x: 1.1;
+	-fx-scale-y: 1.1;
+	-fx-scale-z: 1.1;
+}
+
+
+.text-field 
+{
+	-fx-text-fill: rgb(77, 102, 204);
+	-fx-font-size: 16px;
+	-fx-prompt-text-fill: rgb(77, 102, 204);
+}
+
+.date-picker:contains-focus >.arrow-button
+{
+	-fx-background-color: rgb(77, 107, 204);
+}
+.jfx-date-picker
+{
+
+}
+
+.jfx-combo-box:contains-focus >.arrow-button
+{
+	-fx-prompt-text-fill: rgb(77, 102, 204);
+	-fx-text-fill: rgb(77, 102, 204);
+
+}
+
+.jfx-text-area .content
+{
+	-fx-background-color: #ffffff;
+
+}

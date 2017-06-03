@@ -58,12 +58,22 @@ public class NewUserController implements Initializable, ControlledScreen
     private JFXPasswordField password1;
     @FXML
     private JFXPasswordField password2;
+    @FXML
+    private JFXComboBox comboBox;
+    @FXML
+    private JFXDatePicker datepicker;
 	
-	
+	private void genderAndDatepicer()
+    {
+
+    }
+
         @Override
 	public void initialize(URL location, ResourceBundle resources) {
                 root.getStyleClass().add("root");
-                 sidePanelSetter(); /** the the side panel in the drawer */
+                sidePanelSetter(); /** the the side panel in the drawer */
+                this.genderAndDatepicer();
+
 		setEvents();
 	}
         

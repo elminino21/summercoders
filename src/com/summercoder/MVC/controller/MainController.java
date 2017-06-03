@@ -5,7 +5,8 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
-
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXSnackbar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -43,6 +44,8 @@ public class MainController implements Initializable, ControlledScreen
 	private JFXDrawer drawer;
 	@FXML
 	private JFXHamburger hamberger;
+
+
          private VBox side;
 
 	
@@ -51,18 +54,19 @@ public class MainController implements Initializable, ControlledScreen
     {
          
     	this.addTestData();
-       
+        setSnackbar();
         piechart.setData(pieChartData);
     }
 	
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
-                root.getStyleClass().add("root");
+        root.getStyleClass().add("root");
 		this.addTestData();
 		piechart.legendVisibleProperty().setValue(false);
-		 piechart.setData(pieChartData);
-		  sidePanelSetter(); /** the the side panel in the drawer */
+        piechart.setData(pieChartData);
+        sidePanelSetter(); /** the the side panel in the drawer */
 		setEvents();
+		this.setSnackbar();
 		
 	}
     private void addTestData()
@@ -83,7 +87,7 @@ public class MainController implements Initializable, ControlledScreen
 		this.drawerClose();
 		event.consume();  
     }
-	
+
 	@FXML
     private void drawerclicked(MouseEvent event) 
 	{
@@ -169,5 +173,18 @@ public class MainController implements Initializable, ControlledScreen
               
            } 
         }
+
+        private void setSnackbar()
+        {
+
+             JFXSnackbar snackbar = new JFXSnackbar( );
+            snackbar.registerSnackbarContainer(root);
+            snackbar.toFront();
+            snackbar.prefWidth(600);
+
+            snackbar.show("I AM A POP UP MESSAGE", 10000);
+
+        }
+
 	
 }

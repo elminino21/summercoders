@@ -21,7 +21,7 @@ fx:controller="com.summercoder.MVC.controller.supportController"  >
        <VBox layoutX="230" layoutY="0" alignment="CENTER">
        <!-- title -->
       <Label  text="Contact us" style="-fx-text-fill:rgb(77,102,204);-fx-font-size:40px; -fx-font-family: Lobster" />
-      	<padding><Insets top="0" right="25" bottom="25" left="25"/></padding>
+      	<padding><Insets top="0" right="25" bottom="25" left="100"/></padding>
        </VBox>
        
     <!-- drawer init -->
@@ -42,20 +42,38 @@ fx:controller="com.summercoder.MVC.controller.supportController"  >
         
         <GridPane  layoutX="90" layoutY="100" hgap="20" vgap="40" > 
  
-    <padding><Insets top="25" right="100" bottom="25" left="100"/></padding>
+    <padding><Insets top="25" right="0" bottom="25" left="175"/></padding>
       
       
-      <JFXTextField  prefHeight="25" prefWidth="150" alignment="center" promptText="First Name" GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
+      <JFXTextField  prefHeight="25" prefWidth="300" alignment="center" promptText="First Name" GridPane.rowIndex="0" style="-fx-text-fill:rgb(77,102,204);" />
       <JFXTextField  prefHeight="25" prefWidth="100" alignment="center"  promptText="Last Name"  GridPane.rowIndex="1" style="-fx-text-fill:rgb(77,102,204);" />
       <JFXTextField  prefHeight="25" prefWidth="100" alignment="center" promptText="Email" GridPane.rowIndex="2" style="-fx-text-fill:rgb(77,102,204);" />  
       <JFXTextArea  prefHeight="100" prefWidth="100"  promptText="Your massage here *" GridPane.rowIndex="3" style="-fx-text-fill:rgb(77,102,204);" />
       <Label   fx:id="massageText" text="I will be a massage to the user"   style="-fx-text-fill:#eb0707;-fx-font-size:15px;" GridPane.rowIndex="4"/>
-      <HBox GridPane.rowIndex="8">
-          <padding><Insets top="0" right="0" bottom="25" left="150"/></padding>
-      <JFXButton text="SEND MASSAGE" onAction="#sendPressed" alignment="center"  style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;"/>
+      <HBox GridPane.rowIndex="7">
+          <padding><Insets top="0" right="0" bottom="25" left="75"/></padding>
+      <JFXButton  buttonType="RAISED" text="SEND MASSAGE" onAction="#sendPressed"
+                  style="-fx-background-color: rgb(77,102,204);-fx-text-fill:#ffffff;-fx-font-size:16px;"/>
       </HBox>
       <!-- init center text files -->
-        	
+
+            <columnConstraints>
+                <ColumnConstraints />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+
         </GridPane>
         
         

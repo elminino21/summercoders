@@ -32,6 +32,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
+
 /**
  *
  * @author elminino
@@ -79,11 +80,12 @@ public class AboutTeamController implements Initializable, ControlledScreen
  
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
-                root.getStyleClass().add("root");
+        root.getStyleClass().add("root");
 		this.setnewDisplayer();
-		  sidePanelSetter(); /** the the side panel in the drawer */
+        sidePanelSetter(); /** the the side panel in the drawer */
 		setEvents();
-                goToLink();
+        goToLink();
+
 		
 	}
         

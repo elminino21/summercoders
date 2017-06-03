@@ -1,6 +1,7 @@
 package com.summercoder.database;
 
 import com.summercoder.MVC.model.DataBase;
+import com.summercoder.MVC.model.UserTableInfo;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,8 +19,8 @@ public class UserTableInfoTest {
     /**
      * @instanceVariables
      */
-    DataBase data;
-    ResultSet result;
+    UserTableInfo data;
+    UserTableInfo result;
 
     /**
      * not the annotation @Before let's java know that this method should be run first.
@@ -27,8 +28,7 @@ public class UserTableInfoTest {
     @Before
     public void setUp()
     {
-        data = new DataBase();
-        result = data.desisplayAll();
+
     }
 
     /**
@@ -38,14 +38,7 @@ public class UserTableInfoTest {
     @Test
     public void test() throws ClassNotFoundException   {
 
-        try {
-            assertEquals(true, result.next());
 
-
-        }catch (SQLException e) {
-
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -57,17 +50,7 @@ public class UserTableInfoTest {
     public void tearDown() throws Exception
     {
 
-        result.close();
-        data.close();
 
-        if(result.isClosed())
-        {
-            result = null;
-            data = null;
-        }
-
-        assertNull(data);
-        assertNull(result);
 
     }
 }
