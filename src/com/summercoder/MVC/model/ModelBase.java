@@ -59,7 +59,7 @@ public abstract class ModelBase implements  IDataBase
                 // check for database table
                 Statement state = connection.createStatement();
 
-                ResultSet resulSet = state.executeQuery("SELECT NAME FROM sqlite_master WHERE type='table' AND name='" +tableName+ "'"   );
+                ResultSet resulSet = state.executeQuery("SELECT NAME FROM sqlite_master WHERE type='table' AND name='"+ tableName + "'"   );
                 if( !resulSet.next()) // check if the database has data
                 {
                     /**
@@ -67,7 +67,7 @@ public abstract class ModelBase implements  IDataBase
                      * creates tables and adds  test data
                      *
                      */
-
+                    System.out.println("added test data");
                      this.createTable();
                      this.addTestData();
 
@@ -97,10 +97,10 @@ public abstract class ModelBase implements  IDataBase
 
             }
             Statement state = connection.createStatement();
-            res = state.executeQuery("SELECT * " + tableName);
+            res = state.executeQuery("SELECT * FROM " + tableName);
 
         } catch (Exception e ) {
-            System.out.println("failed to get connection method USERS");
+            System.out.println("failed to get connection method " + tableName);
             e.printStackTrace();
         }
         return res;
@@ -118,7 +118,6 @@ public abstract class ModelBase implements  IDataBase
             e.printStackTrace();
         }
     }
-
 
 
     /**

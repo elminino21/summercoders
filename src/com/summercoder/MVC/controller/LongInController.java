@@ -169,9 +169,16 @@ public class LongInController  implements Initializable, ControlledScreen  {
                 setEvents();
         getFieldCommand();
         getPassCommand();
+        this.setAllListeners();
 
 	}
-        private void getFieldCommand()
+
+    private void setAllListeners()
+    {
+        drawer.setOnDrawerClosed( (e)->  drawer.toBack() );
+    }
+
+    private void getFieldCommand()
         {
             textfieldEmail.setOnKeyPressed( (event) -> onEnterPress( event) );
 
@@ -214,10 +221,10 @@ public class LongInController  implements Initializable, ControlledScreen  {
                {
                   
                     node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
-                        
+                        drawerClose( );
                          switch(node.getAccessibleText()) {
                              case "account":
-                                 myController.setScreen(GUITestester.screen3ID);
+
                              break;
                              case "about": 
                                  myController.setScreen(GUITestester.screen6ID);
@@ -232,9 +239,9 @@ public class LongInController  implements Initializable, ControlledScreen  {
                          }
                         
                     });
-               
+
                }
-              
+
            } 
         }
 	
@@ -245,16 +252,12 @@ public class LongInController  implements Initializable, ControlledScreen  {
 	
 	private void drawerClose( )
 	{
-		
+        drawer.setOnDrawerClosed( (e)->  drawer.toBack() );
         if( !drawer.isHidden()  )
         {
         	drawer.close();
-                
-                if(drawer.isHidding()) 
-                {
-                    drawer.toBack();
-                    
-                }    	
+
+
         }
 	}
 	/**

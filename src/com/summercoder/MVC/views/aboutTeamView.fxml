@@ -24,7 +24,7 @@
 
 
 
-       <GridPane alignment="center" hgap="100" layoutX="50" layoutY="150" vgap="150">
+       <GridPane alignment="center" hgap="100" layoutX="100" layoutY="150" vgap="150">
 
 
            <Circle fx:id="member1" radius="70" GridPane.columnIndex="0" GridPane.rowIndex="0" />

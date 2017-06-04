@@ -146,11 +146,11 @@ public class DataBase implements IDataBase{
 		 preState.execute();	
 		 preState.close();
                  
-                 Statement statement = connection.createStatement();
+               /*  Statement statement = connection.createStatement();
 	      String sql = "INSERT INTO USERS ( id , password ) " +
 	                   "VALUES (  'student@gmail.com', 'Student12' );"; 
 	      statement.executeUpdate(sql);
-                 
+                 */
      	
 	 }
 

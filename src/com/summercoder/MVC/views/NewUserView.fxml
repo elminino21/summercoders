@@ -66,8 +66,11 @@
 
           <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="100" GridPane.rowIndex="6">
               <children>
-                  <JFXComboBox fx:id="comboBox" labelFloat="true" promptText="Gender" unFocusColor="#4059a9" visibleRowCount="3" />
-                  <JFXDatePicker fx:id="datepicker" defaultColor="#4059a9" promptText="Enter AGe" />
+                  <JFXComboBox fx:id="comboBox" prefHeight="60"     promptText="Gender" unFocusColor="#4059a9" visibleRowCount="3" >
+
+                  </JFXComboBox>
+
+                  <JFXDatePicker fx:id="datepicker" defaultColor="#4059a9" promptText="DOB MM/DD/YYYY" />
               </children>
           </HBox>
 
@@ -91,8 +94,7 @@
             <RowConstraints />
             <RowConstraints />
             <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
+
          </rowConstraints>
       <!-- init center text files -->
         	

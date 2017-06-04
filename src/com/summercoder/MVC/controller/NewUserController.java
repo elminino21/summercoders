@@ -74,29 +74,22 @@ public class NewUserController implements Initializable, ControlledScreen
                 root.getStyleClass().add("root");
                 sidePanelSetter(); /** the the side panel in the drawer */
                 this.genderAndDatepicer();
-
+            genderSelectorSettup();
 		setEvents();
 	}
+
+	private void genderSelectorSettup()
+    {
+
+        comboBox.getItems().add(new Label("Male"));
+        comboBox.getItems().add(new Label("Female"));
+        comboBox.getItems().add(new Label("Other"));
+
+    }
         
-    @FXML
-	private void signupPressed(ActionEvent event)
-	{
-
-        if(checkFiels() == true  )
-        {
-            this.getAllFields();
-            myController.setScreen(GUITestester.screen1ID);
-            this.clearAllFiels();
-        }else
-        {
-            AudioClip plonkSound = new AudioClip("file:APPFiles/sounds/error.mp3");
-            plonkSound.play();
-        }
-		event.consume();
-	}
 
 
-   
+
     @FXML
     private void panelclicked(MouseEvent event) 
 	{
@@ -106,8 +99,6 @@ public class NewUserController implements Initializable, ControlledScreen
     }
 
 
-
-	
 	@FXML
     private void drawerclicked(MouseEvent event) 
 	{
@@ -127,12 +118,13 @@ public class NewUserController implements Initializable, ControlledScreen
 	
 	private void drawerClose( )
 	{
-		
+
+        drawer.setOnDrawerClosed( (e)->  drawer.toBack() );
         if( !drawer.isHidden()  )
         {
-        	drawer.close();
-        	drawer.toBack();
-        	
+            drawer.close();
+
+
         }
 	}
 	/**
@@ -162,8 +154,7 @@ public class NewUserController implements Initializable, ControlledScreen
             
            drawer.setSidePane(side);
           
-           
-          
+
         }
         
         private void setEvents()
@@ -172,27 +163,32 @@ public class NewUserController implements Initializable, ControlledScreen
            {
                if(node.getAccessibleText() != null)
                {
-                  
-                    node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
-                        
-                         switch(node.getId()) {
-                             case "account": myController.setScreen(GUITestester.screen1ID);
-                             break;
-                             case "exit": 
-                                 Stage stage = Stage.class.cast(Control.class.cast(e.getSource()).getScene().getWindow());
-                                 stage.close();
-                             break;
-                             case "about": myController.setScreen(GUITestester.screen1ID);
-                               break;
-                             case "support": myController.setScreen(GUITestester.screen5ID);
-                                 
-                         }
-                        
-                    });
+
+                   this.eventAdder( node);
                
                }
-              
+
            } 
+        }
+
+        private void eventAdder(Node node)
+        {
+            node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
+                drawerClose( );
+                switch(node.getId()) {
+                    case "account": myController.setScreen(GUITestester.screen1ID);
+                        break;
+                    case "exit":
+                        Stage stage = Stage.class.cast(Control.class.cast(e.getSource()).getScene().getWindow());
+                        stage.close();
+                        break;
+                    case "about": myController.setScreen(GUITestester.screen1ID);
+                        break;
+                    case "support": myController.setScreen(GUITestester.screen5ID);
+
+                }
+
+            });
         }
 
 
@@ -233,8 +229,10 @@ public class NewUserController implements Initializable, ControlledScreen
      */
     private void getAllFields()
     {
+
         UserTableInfo newUser = new UserTableInfo("newUser");
-        newUser.addNewUser( fname.getText(),  lname.getText(),  userID.getText(),  email.getText(),  password1.getText() );
+        newUser.addNewUser( fname.getText(),  lname.getText(),  userID.getText(),  email.getText(),
+                password1.getText(), comboBox.getValue().toString(), datepicker.getValue().toString() );
 
     }
 
@@ -250,8 +248,6 @@ public class NewUserController implements Initializable, ControlledScreen
     }
 
 
-
-
     /**
      * returns false if any input field is empty or nulll
      *
@@ -259,11 +255,34 @@ public class NewUserController implements Initializable, ControlledScreen
      */
     private boolean hasInput()
     {
-        return ( fname.getText() == null ||fname.getText().isEmpty() ) || (lname.getText() ==null ||lname.getText().isEmpty() )
-                || (userID.getText() ==null ||userID.getText().isEmpty() ) || (email.getText() ==null && email.getText().isEmpty() )
-                || (password1.getText() ==null || password1.getText().isEmpty() ) || (password2.getText() ==null || password2.getText().isEmpty() );
+
+
+        return ( fname.getText() == null ||fname.getText().isEmpty() )
+                || (lname.getText() ==null ||lname.getText().isEmpty() )
+                || (userID.getText() ==null ||userID.getText().isEmpty() )
+                || (email.getText() ==null && email.getText().isEmpty() )
+                || (password1.getText() ==null || password1.getText().isEmpty() )
+                || (password2.getText() ==null || password2.getText().isEmpty() )
+                || (comboBox.getValue().toString() ==null || comboBox.getValue().toString().isEmpty() )
+                || (datepicker.getValue().toString() ==null || datepicker.getValue().toString().isEmpty());
     }
 
+    @FXML
+    private void signupPressed(ActionEvent event)
+    {
+
+        if(checkFiels() == true  )
+        {
+            this.getAllFields();
+            myController.setScreen(GUITestester.screen1ID);
+            this.clearAllFiels();
+        }else
+        {
+            AudioClip plonkSound = new AudioClip("file:APPFiles/sounds/error.mp3");
+            plonkSound.play();
+        }
+        event.consume();
+    }
 
 	
 }

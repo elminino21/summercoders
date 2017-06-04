@@ -190,7 +190,7 @@ public class AboutTeamController implements Initializable, ControlledScreen
                {
                   
                     node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
-                        
+                        drawerClose( );
                          switch(node.getId()) {
                              case "account": myController.setScreen(GUITestester.screen3ID);
                              break;
@@ -205,7 +205,7 @@ public class AboutTeamController implements Initializable, ControlledScreen
                     });
                
                }
-              
+
            } 
         }
 	

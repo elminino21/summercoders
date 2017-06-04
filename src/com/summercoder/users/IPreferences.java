@@ -6,4 +6,10 @@ package com.summercoder.users;
  */
 public interface IPreferences {
 
+    boolean muteApplication(boolean mute);
+    boolean hasFunFact(boolean fact);
+    boolean allowCrashInfo(boolean crash);
+    boolean autoSendITemScores(boolean score);
+
+
 }

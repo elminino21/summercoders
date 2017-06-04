@@ -3,6 +3,6 @@ package com.summercoder.users;
 public enum UserProperty 
 {
 
-	ID, email, fName, MI,lName, password , Gender, Age
+	ID, email, fName, MI,lName, password , Age, DOB,
 
 }

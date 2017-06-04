@@ -143,12 +143,13 @@ public class supportController implements Initializable, ControlledScreen
 	
 	private void drawerClose( )
 	{
-		
+
+        drawer.setOnDrawerClosed( (e)->  drawer.toBack() );
         if( !drawer.isHidden()  )
         {
-        	drawer.close();
-        	drawer.toBack();
-        	
+            drawer.close();
+
+
         }
 	}
 	/**
@@ -189,7 +190,7 @@ public class supportController implements Initializable, ControlledScreen
                {
                   
                     node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
-                        
+                        drawerClose( );
                          switch(node.getId()) {
                              case "account": myController.setScreen(GUITestester.screen3ID);
                              break;
@@ -204,7 +205,7 @@ public class supportController implements Initializable, ControlledScreen
                     });
                
                }
-              
+
            } 
         }
 
