@@ -193,12 +193,16 @@ public class supportController implements Initializable, ControlledScreen
                         drawerClose( );
                          switch(node.getId()) {
                              case "account": myController.setScreen(GUITestester.screen3ID);
+                                 clearFields();
                              break;
                              case "exit": myController.setScreen(GUITestester.screen1ID);
+                                 clearFields();
                              break;
                              case "about": myController.setScreen(GUITestester.screen6ID);
+                                 clearFields();
                              break;
                              case "support": myController.setScreen(GUITestester.screen5ID);
+
                                 
                          }
                         

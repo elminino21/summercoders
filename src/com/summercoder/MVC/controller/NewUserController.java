@@ -174,17 +174,22 @@ public class NewUserController implements Initializable, ControlledScreen
         private void eventAdder(Node node)
         {
             node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
+                clearAllFiels();
                 drawerClose( );
                 switch(node.getId()) {
                     case "account": myController.setScreen(GUITestester.screen1ID);
+
                         break;
                     case "exit":
                         Stage stage = Stage.class.cast(Control.class.cast(e.getSource()).getScene().getWindow());
+
                         stage.close();
                         break;
                     case "about": myController.setScreen(GUITestester.screen1ID);
+
                         break;
                     case "support": myController.setScreen(GUITestester.screen5ID);
+
 
                 }
 

@@ -65,11 +65,16 @@ public class PasswordResetController  implements Initializable, ControlledScreen
             {
                 AudioClip plonkSound = new AudioClip("file:APPFiles/sounds/error.mp3");
                 plonkSound.play();
+                clearField();
             }
         textfieldEmail.clear();
 		event.consume();
 	}
-        
+
+	private void clearField()
+    {
+        textfieldEmail.clear();
+    }
         
         private boolean sentEmail()
         {
@@ -91,6 +96,8 @@ public class PasswordResetController  implements Initializable, ControlledScreen
             return answer;
      
         }
+
+
         
         
    
@@ -168,7 +175,8 @@ public class PasswordResetController  implements Initializable, ControlledScreen
                {
                   
                     node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) ->{
-                        drawerClose( );
+                        drawerClose();
+                        clearField();
                          switch(node.getId()) {
                              case "account": myController.setScreen(GUITestester.screen3ID);
                              break;

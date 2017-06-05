@@ -1,15 +1,18 @@
 package com.summercoder.users;
 
+import javafx.beans.property.SimpleStringProperty;
+
 import java.util.Date;
 
 public class User implements  IUser {
 
-    private String firstName;
-    private String lastName;
-    private String password;
+    private SimpleStringProperty firstName;
+    private SimpleStringProperty lastName;
+    private SimpleStringProperty password;
+    private SimpleStringProperty email;
     private Gender gender;
-    private String email;
     private Date age;
+
 
 
     public User()
@@ -20,16 +23,16 @@ public class User implements  IUser {
     }
 
     public User(String password, String email) {
-        this.password = password;
-        this.email = email;
+        this.password = new SimpleStringProperty(password);
+        this.email = new SimpleStringProperty(email);
     }
 
 
     public User(String firstName, String lastName, Gender gender, String email, Date age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = new SimpleStringProperty(firstName);
+        this.lastName = new SimpleStringProperty(lastName);
         this.gender = gender;
-        this.email = email;
+        this.email = new SimpleStringProperty(email);
         this.age = age;
     }
 
@@ -41,19 +44,51 @@ public class User implements  IUser {
     }
 
     public String getFirstName() {
+        return firstName.get();
+    }
+
+    public SimpleStringProperty firstNameProperty() {
         return firstName;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.firstName.set(firstName);
     }
 
     public String getLastName() {
+        return lastName.get();
+    }
+
+    public SimpleStringProperty lastNameProperty() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastName.set(lastName);
+    }
+
+    public String getPassword() {
+        return password.get();
+    }
+
+    public SimpleStringProperty passwordProperty() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password.set(password);
+    }
+
+    public String getEmail() {
+        return email.get();
+    }
+
+    public SimpleStringProperty emailProperty() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email.set(email);
     }
 
     public Gender getGender() {
@@ -64,27 +99,12 @@ public class User implements  IUser {
         this.gender = gender;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public Date getAge() {
         return age;
     }
 
     public void setAge(Date age) {
         this.age = age;
-    }
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
 }

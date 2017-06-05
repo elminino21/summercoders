@@ -20,7 +20,7 @@ public class UserTableInfoTest {
      * @instanceVariables
      */
     UserTableInfo data;
-    UserTableInfo result;
+    ResultSet result;
 
     /**
      * not the annotation @Before let's java know that this method should be run first.
@@ -28,7 +28,8 @@ public class UserTableInfoTest {
     @Before
     public void setUp()
     {
-
+        data = new UserTableInfo("userInfo");
+        result = data.desisplayAll();
     }
 
     /**
@@ -36,8 +37,16 @@ public class UserTableInfoTest {
      */
 
     @Test
-    public void test() throws ClassNotFoundException   {
+    public void test() throws ClassNotFoundException
+    {
+        try {
+            assertEquals(true, result.next());
 
+
+        }catch (SQLException   e) {
+
+            e.printStackTrace();
+        }
 
     }
 
@@ -49,7 +58,17 @@ public class UserTableInfoTest {
     @After
     public void tearDown() throws Exception
     {
+        result.close();
+        data.close();
 
+        if(result.isClosed())
+        {
+            result = null;
+            data = null;
+        }
+
+        assertNull(data);
+        assertNull(result);
 
 
     }

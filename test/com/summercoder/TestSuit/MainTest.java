@@ -6,6 +6,7 @@
 package com.summercoder.TestSuit;
 
 import com.summercoder.database.DatabaseTest;
+import com.summercoder.database.UserTableInfoTest;
 import com.summercoder.users.validator.EmailValidator;
 import com.summercoder.users.validator.EmailValidatorTest;
 import com.summercoder.users.validator.PasswordValidatorTest;
@@ -22,7 +23,7 @@ import org.junit.runners.Suite.SuiteClasses;
  * @author elminino
  */
 @RunWith(Suite.class)
-@SuiteClasses({PasswordValidatorTest.class, EmailValidatorTest.class, RegularStringValidatorTest.class, DatabaseTest.class })
+@SuiteClasses({PasswordValidatorTest.class, EmailValidatorTest.class, RegularStringValidatorTest.class, DatabaseTest.class, UserTableInfoTest.class })
 public class MainTest  {
     
     

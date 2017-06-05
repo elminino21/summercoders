@@ -122,7 +122,7 @@ public class LongInController  implements Initializable, ControlledScreen  {
            return  user.hasUser(textfieldEmail.getText(), passInput.getText());         
         }
                 
-         @FXML
+    @FXML
 	private void  forgotPasswordPressed(MouseEvent event)
 	{
             
@@ -224,13 +224,15 @@ public class LongInController  implements Initializable, ControlledScreen  {
                         drawerClose( );
                          switch(node.getAccessibleText()) {
                              case "account":
-
+                                 clearFields();
                              break;
                              case "about": 
                                  myController.setScreen(GUITestester.screen6ID);
+                                 clearFields();
                              break;
                              case "support": 
                                  myController.setScreen(GUITestester.screen5ID);
+                                 clearFields();
                              break;
                              case "exit": 
                                  Stage stage = Stage.class.cast(Control.class.cast(e.getSource()).getScene().getWindow());
