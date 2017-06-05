@@ -53,18 +53,20 @@ public class DatabaseTest {
 	@After
 	public void tearDown() throws Exception 
 	{
-		
-		result.close();
-		data.close();
-		
-		if(result.isClosed())
-		{
-			result = null;
-			data = null;
-		}
-		
-		assertNull(data);
-		assertNull(result);
+		/*
+        result.close();
+        data.close();
+
+        if(result.isClosed())
+        {
+            result = null;
+            data = null;
+        }
+
+        assertNull(data);
+        assertNull(result);
+
+        */
 
 	}
 

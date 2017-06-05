@@ -1,6 +1,6 @@
 package com.summercoder.database;
 
-import com.summercoder.MVC.model.DataBase;
+import com.summercoder.MVC.model.PreferencesTable;
 import com.summercoder.MVC.model.UserTableInfo;
 import org.junit.After;
 import org.junit.Before;
@@ -13,22 +13,21 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 /**
- * Created by elminino on 6/2/17.
+ * Created by elminino on 6/4/17.
  */
-public class UserTableInfoTest {
+public class PreferencesTablesTest {
     /**
      * @instanceVariables
      */
-    UserTableInfo data;
+    PreferencesTable data;
     ResultSet result;
 
     /**
      * not the annotation @Before let's java know that this method should be run first.
      */
     @Before
-    public void setUp()
-    {
-        data = new UserTableInfo("userInfo");
+    public void setUp() throws InterruptedException {
+        data = new PreferencesTable("test3");
         result = data.desisplayAll();
     }
 
@@ -43,7 +42,7 @@ public class UserTableInfoTest {
             assertEquals(true, result.next());
 
 
-        }catch (SQLException   e) {
+        }catch (SQLException e) {
 
             e.printStackTrace();
         }
@@ -72,5 +71,7 @@ public class UserTableInfoTest {
         assertNull(result);
 
         */
+
+
     }
 }
