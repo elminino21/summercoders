@@ -14,7 +14,7 @@ public interface IUser
  */
 
 
-    void setAllProperties(String fName, String LName, String email, Gender gender, Date age );
+    void setAllProperties(Name name, String email, Gender gender, Date age );
 
 
 

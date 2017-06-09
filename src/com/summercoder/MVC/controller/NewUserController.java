@@ -64,16 +64,13 @@ public class NewUserController implements Initializable, ControlledScreen
     @FXML
     private JFXDatePicker datepicker;
 	
-	private void genderAndDatepicer()
-    {
 
-    }
 
-        @Override
+    @Override
 	public void initialize(URL location, ResourceBundle resources) {
                 root.getStyleClass().add("root");
                 sidePanelSetter(); /** the the side panel in the drawer */
-                this.genderAndDatepicer();
+
             genderSelectorSettup();
 		setEvents();
 	}
@@ -123,8 +120,6 @@ public class NewUserController implements Initializable, ControlledScreen
         if( !drawer.isHidden()  )
         {
             drawer.close();
-
-
         }
 	}
 	/**

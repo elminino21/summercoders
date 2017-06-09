@@ -1,18 +1,19 @@
 package com.summercoder.users;
 
+import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.util.Date;
 
 public class User implements  IUser {
 
-    private SimpleStringProperty firstName;
-    private SimpleStringProperty lastName;
+
+    private SimpleLongProperty userIndex; /** will be use to link to all the tables related to he user information */
+    private final Name name = new Name();
     private SimpleStringProperty password;
     private SimpleStringProperty email;
     private Gender gender;
     private Date age;
-
 
 
     public User()
@@ -28,9 +29,8 @@ public class User implements  IUser {
     }
 
 
-    public User(String firstName, String lastName, Gender gender, String email, Date age) {
-        this.firstName = new SimpleStringProperty(firstName);
-        this.lastName = new SimpleStringProperty(lastName);
+    public User( Gender gender, String email, Date age) {
+
         this.gender = gender;
         this.email = new SimpleStringProperty(email);
         this.age = age;
@@ -38,34 +38,14 @@ public class User implements  IUser {
 
 
     @Override
-    public void setAllProperties(String fName, String LName, String email, Gender gender, Date age)
+    public void setAllProperties( Name name, String email, Gender gender, Date age)
     {
 
+        this.gender = gender;
+        this.email = new SimpleStringProperty(email);
+        this.age = age;
     }
 
-    public String getFirstName() {
-        return firstName.get();
-    }
-
-    public SimpleStringProperty firstNameProperty() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName.set(firstName);
-    }
-
-    public String getLastName() {
-        return lastName.get();
-    }
-
-    public SimpleStringProperty lastNameProperty() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName.set(lastName);
-    }
 
     public String getPassword() {
         return password.get();
@@ -105,6 +85,18 @@ public class User implements  IUser {
 
     public void setAge(Date age) {
         this.age = age;
+    }
+
+    public long getUserIndex() {
+        return userIndex.get();
+    }
+
+    public SimpleLongProperty userIndexProperty() {
+        return userIndex;
+    }
+
+    public void setUserIndex(long userIndex) {
+        this.userIndex.set(userIndex);
     }
 
 }

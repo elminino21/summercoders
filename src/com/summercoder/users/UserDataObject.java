@@ -11,4 +11,9 @@ public class UserDataObject implements IUserDataObject{
     public User loadUser(long index) {
         return null;
     }
+
+    @Override
+    public User loadUser(String password, String email) {
+        return null;
+    }
 }

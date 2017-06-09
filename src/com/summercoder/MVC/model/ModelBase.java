@@ -32,7 +32,6 @@ public abstract class ModelBase implements  IDataBase
         try
         {
 
-
             connection = DriverManager.getConnection("jdbc:sqlite:APPFiles/sql/appDataBase.sqlite");
             System.out.println("connection open successfully");
             this.initialize();
@@ -52,7 +51,6 @@ public abstract class ModelBase implements  IDataBase
     protected void initialize()
     {
         try{
-
 
             if( !hasData ) {
                 hasData = true;

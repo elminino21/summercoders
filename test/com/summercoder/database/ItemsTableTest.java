@@ -50,6 +50,75 @@ public class ItemsTableTest {
         }
 
     }
+    /**
+     * all the @test are ran one after the other
+     */
+
+    @Test
+    public void test2() throws ClassNotFoundException
+    {
+        try {
+            assertEquals(true, result.next());
+
+
+        }catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * all the @test are ran one after the other
+     */
+
+    @Test
+    public void test3() throws ClassNotFoundException
+    {
+        try {
+            assertEquals(true, result.next());
+
+
+        }catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+    }
+    /**
+     * all the @test are ran one after the other
+     */
+
+    @Test
+    public void test4() throws ClassNotFoundException
+    {
+        try {
+            assertEquals(true, result.next());
+
+
+        }catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+    }
+    /**
+     * all the @test are ran one after the other
+     */
+
+    @Test
+    public void test5() throws ClassNotFoundException
+    {
+        try {
+            assertEquals(true, result.next());
+
+
+        }catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+    }
 
     /**
      * the annotation @After is to make sure the appplication is closing as intended
